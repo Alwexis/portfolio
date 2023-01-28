@@ -1,0 +1,367 @@
+@import url("./fonts.css");
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  background-image: url("../assets/media/background.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#background-shadow {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  z-index: 0;
+}
+
+#transition-shadow {
+  height: 0%;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  z-index: 2;
+}
+#transition-shadow.active {
+  height: 100%;
+  transition: all 1s;
+}
+
+@media (min-width: 950px) {
+  #navbar {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    margin-top: 1vh;
+    flex-direction: row;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    color: whitesmoke;
+    font-family: "Aeroport Mono";
+  }
+  #navbar a {
+    position: relative;
+    color: #fff;
+    padding: 2vh 2.5vh;
+    cursor: pointer;
+  }
+  #navbar a::after, #navbar a::before {
+    content: "";
+    position: absolute;
+    border: 0px solid transparent;
+    width: 0%;
+    height: 0%;
+    transition: all 0.3s ease;
+  }
+  #navbar a::after {
+    width: 0%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+  }
+  #navbar a::before {
+    width: 0%;
+    height: 0%;
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+  }
+  #navbar a p {
+    margin: 0;
+    padding: 0.25vh 0.75vh;
+    transition: all 0.5s;
+  }
+  #navbar a:hover div {
+    background-color: #fff;
+  }
+  #navbar a:hover p {
+    color: rgb(20, 20, 20);
+    -webkit-animation: glitch 1s linear infinite;
+            animation: glitch 1s linear infinite;
+  }
+  #navbar a:hover p::after, #navbar a:hover p::before {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  #navbar a:hover p::before {
+    -webkit-animation: glitchTop 1s linear infinite;
+            animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  #navbar a:hover p::after {
+    -webkit-animation: glitchBotom 1.5s linear infinite;
+            animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  #navbar a:hover::before, #navbar a:hover::after {
+    width: 10px;
+    height: 10px;
+    border-color: #fff;
+  }
+  #welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: "Aeroport Mono";
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+    padding: 2vh 6vh;
+  }
+  #welcome-text #welcome-title {
+    font-size: 7.5vh;
+    margin-bottom: 0;
+  }
+  #welcome-text #social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1.5vh 0vh;
+  }
+  #welcome-text #social-media .social-media-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.92);
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  #welcome-text #social-media .social-media-icon i {
+    color: rgb(20, 20, 20);
+    font-size: 3vh;
+    transition: all 0.5s;
+  }
+  #welcome-text #social-media .social-media-icon:hover {
+    transform: rotate(0deg) skew(0deg) translate(0, -5px);
+    transition: all 0.5s;
+  }
+  #welcome-text #social-media .social-media-icon:hover:first-child {
+    background-color: #55acee;
+  }
+  #welcome-text #social-media .social-media-icon:hover:nth-child(2) {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  }
+  #welcome-text #social-media .social-media-icon:hover:nth-child(3) {
+    background-color: #7289d9;
+  }
+  #welcome-text #social-media .social-media-icon:hover:nth-child(4) {
+    background-color: #414141;
+  }
+  #welcome-text #social-media .social-media-icon:hover:last-child {
+    background-color: #007bb5;
+  }
+  #welcome-text #social-media .social-media-icon:hover * {
+    color: rgba(255, 255, 255, 0.92);
+  }
+  #welcome-text #who-am-i-txt::after {
+    content: "";
+    border-right: 1px solid rgba(255, 255, 255, 0.92);
+    margin-left: 0.5vh;
+    -webkit-animation-name: intermitent;
+            animation-name: intermitent;
+    -webkit-animation-duration: 0.75s;
+            animation-duration: 0.75s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+}
+@media (max-width: 950px) {
+  #navbar {
+    display: flex;
+    align-self: flex-end;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vh;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    color: whitesmoke;
+    font-family: "Aeroport Mono";
+  }
+  #navbar a {
+    position: relative;
+    color: #fff;
+    padding: 2vh 2.5vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  #navbar a::after {
+    content: "";
+    width: 33%;
+    border-bottom: 1px solid;
+    position: absolute;
+  }
+  #navbar a p {
+    margin: 0;
+    padding: 0.25vh 0.75vh;
+    transition: all 0.5s;
+  }
+  #welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: "Aeroport Mono";
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+    padding: 2vh 6vh;
+  }
+  #welcome-text #welcome-title {
+    font-size: 4.5vh;
+  }
+  #welcome-text #social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1.5vh 0vh;
+  }
+  #welcome-text #social-media .social-media-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.92);
+    transition: all 0.5s;
+  }
+  #welcome-text #social-media .social-media-icon i {
+    color: rgb(20, 20, 20);
+    font-size: 3vh;
+    transition: all 0.5s;
+  }
+  #welcome-text #who-am-i-txt::after {
+    content: "";
+    border-right: 1px solid rgba(255, 255, 255, 0.92);
+    margin-left: 0.5vh;
+    -webkit-animation-name: intermitent;
+            animation-name: intermitent;
+    -webkit-animation-duration: 0.75s;
+            animation-duration: 0.75s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+}
+/* Animations */
+@-webkit-keyframes intermitent {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes intermitent {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes glitch {
+  2%, 64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%, 60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+@keyframes glitch {
+  2%, 64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%, 60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+@-webkit-keyframes glitchTop {
+  2%, 64% {
+    transform: translate(2px, -2px);
+  }
+  4%, 60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+@keyframes glitchTop {
+  2%, 64% {
+    transform: translate(2px, -2px);
+  }
+  4%, 60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+@-webkit-keyframes glitchBotom {
+  2%, 64% {
+    transform: translate(-2px, 0);
+  }
+  4%, 60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+@keyframes glitchBotom {
+  2%, 64% {
+    transform: translate(-2px, 0);
+  }
+  4%, 60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}/*# sourceMappingURL=home.css.map */
