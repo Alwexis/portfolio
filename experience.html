@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ariel Silva</title>
     <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/experience.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
+
 <body>
     <section id="transition-shadow" class="transitionEnd"></section>
 
     <section id="navbar-desk">
-        <div class="navbar-img" onclick="changePage('index', false)">
+        <div onclick="changePage('index', false)" class="navbar-img">
             <img src="./assets/media/icon3.png">
         </div>
         <div class="navbar-options">
@@ -38,36 +41,78 @@
             </a>
         </div>
     </section>
-    <section id="navbar-mobile">
-        <div class="navbar-img" onclick="changePage('about', false)">
-            <img src="./assets/media/icon3.png">
+
+    <experience>
+        <div class="experience-title">
+            <translatable class="title" onload="false" variable="experience.title">
+                Experiencia
+            </translatable>
+            <translatable class="content" variable="experiencie.text">
+                Estas son mis experiencias laborales que conforman mi curriculum, en las cuales he aprendido mucho de la
+                empresa y el área en el que ejercí.
+            </translatable>
         </div>
-        <div class="navbar-options">
-            <a onclick="changePage('about', false)">
-                <div>
-                    <translatable variable="navbar.about_me" title="Sobre mi">Sobre mi</translatable>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="slider-item swiper-slide">
+                    <div class="slider-image-wrapper">
+                        <img class="slider-image" src="assets/media/DuocUC.png" alt="SliderImg">
+                    </div>
+                    <div class="slider-item-content">
+                        <translatable class="slider-item-content-header">
+                            Sept. 2021 - Dic. 2021
+                        </translatable>
+                        <translatable class="slider-item-content-title">
+                            DuocUC
+                        </translatable>
+                        <translatable class="slider-item-content-subtitle">
+                            Profesor de Ayudantías en Python
+                        </translatable>
+                        <translatable class="slider-item-content-text">
+                            Trabajé durante unos meses como profesor de clases de ayudantía en la asignatura de
+                            programación de Algoritmos y Estructuras de Datos en Python, en la cual enseñé a los alumnos
+                            las bases de la programación, tanto su estructura como su lógica, y también las bases de
+                            Python.
+                        </translatable>
+                    </div>
                 </div>
-            </a>
-            <a onclick="changePage('stack', false)">
-                <div>
-                    <translatable variable="navbar.mystack" title="Mi Stack">Mi Stack</translatable>
+
+                <div class="slider-item swiper-slide">
+                    <div class="slider-image-wrapper">
+                        <img class="slider-image" src="assets/media/CETECOM.png" alt="SliderImg">
+                    </div>
+                    <div class="slider-item-content">
+                        <translatable class="slider-item-content-header">
+                            Ener. 2023 - Actualidad
+                        </translatable>
+                        <translatable class="slider-item-content-title">
+                            CETECOM
+                        </translatable>
+                        <translatable class="slider-item-content-subtitle">
+                            Mantención general de Equipos Tecnológicos
+                        </translatable>
+                        <translatable class="slider-item-content-text">
+                            Me encuentro actualmente realizando mi práctica profesional en CETECOM. Me desempeño como
+                            técnico de mantención de equipos tecnológicos, en la cual me encargo de realizar la
+                            mantención de los equipos de la 'empresa', tanto de hardware como de software, además de
+                            realizar atención cliente ya sea de forma presencial o telefónica.
+                        </translatable>
+                    </div>
                 </div>
-            </a>
-            <a onclick="changePage('projects', false)">
-                <div>
-                    <translatable variable="navbar.projects" title="Proyectos">Proyectos</translatable>
-                </div>
-            </a>
-            <a>
-                <div>
-                    <translatable variable="navbar.experience" title="Extra">Extra</translatable>
-                </div>
-            </a>
+            </div>
+            <div class="slider-buttons">
+                <button class="swiper-button-prev">Prev</button>
+                <button class="swiper-button-next">Next</button>
+            </div>
+
+            <div class="swiper-pagination"></div>
         </div>
-    </section>
-    
-    <span style="font-family: 'Aeroport Mono'; color: var(--colors-light-2);">SOON EXTRA</span>
-    
+    </experience>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./scripts/translation.js"></script>
+    <script src="./scripts/experiencie.js"></script>
     <script src="./scripts/global.js"></script>
 </body>
+
 </html>

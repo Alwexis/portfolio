@@ -49,6 +49,7 @@ window.onwheel = (e) => {
     if (__CHANGING_PAGE__) return;
     if (__ACTUAL_PAGE__ === 0 && e.deltaY < 0) return;
     if (__ACTUAL_PAGE__ === __PAGES__.length - 1 && e.deltaY > 0) return;
+    if (window.navigator.userAgentData.mobile) return;
     setupInterval();
     __ACTUAL_SCROLLING__ += e.deltaY;
     if (__ACTUAL_SCROLLING__ >= 450) {
@@ -79,10 +80,17 @@ __BODY__.addEventListener('animationstart', (e) => {
 
 __BODY__.ontouchstart = (e) => {
     __BODY__.setAttribute('firstYTouchLocation', e.touches[0].clientY)
+    __BODY__.setAttribute('firstTouchLocationTimestamp', Math.round(e.timeStamp))
 }
 
 __BODY__.ontouchend = (e) => {
     if (__CHANGING_PAGE__) return;
+    if (e.target.classList.toString().includes('swiper')) return;
+    const firstTouchLocationTimestamp = Math.round(__BODY__.getAttribute('firstTouchLocationTimestamp'));
+    const currentTouchLocationTimestamp = Math.round(e.timeStamp);
+    const differenceBetweenTimestamps = Math.abs(firstTouchLocationTimestamp - currentTouchLocationTimestamp);
+    if (differenceBetweenTimestamps < 50 || differenceBetweenTimestamps > 400) return;
+
     const firstYTouchLocation = Math.round(__BODY__.getAttribute('firstYTouchLocation'));
     const currentYTouchLocation = Math.round(e.changedTouches[0].clientY);
     /*
@@ -160,4 +168,10 @@ window.onresize = () => {
     __HEIGHT__ = document.documentElement.clientHeight;
     document.querySelector('body').style.width = __WIDTH__ + 'px';
     document.querySelector('body').style.height = __HEIGHT__ + 'px';
+}
+
+function toggleMenu() {
+    console.log('toggle')
+    const __MENU__ = document.querySelector('#navbar-mobile .navbar-options');
+    __MENU__.classList.toggle('active');
 }

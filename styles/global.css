@@ -155,56 +155,63 @@
   #navbar-desk {
     display: none;
   }
+  /*
   #navbar-mobile {
-    display: flex;
-    align-items: center;
-    margin-top: 1vh;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    color: var(--colors-light-2);
-    font-family: "Aeroport Mono";
+      display: flex;
+      align-items: center;
+      margin-top: 1vh;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      color: var(--colors-light-2);
+      font-family: "Aeroport Mono";
+
+      & .navbar-options {
+          display: flex;
+          align-items: center;
+          align-self: flex-end;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+
+      & .navbar-img img {
+          position: absolute;
+          margin-left: auto;
+          margin-right: auto;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 6vh;
+          height: 6vh;
+          border-radius: 25%;
+          box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+      }
+
+      & a {
+          position: relative;
+          color: var(--colors-light-2);
+          padding: 2vh 2.5vh;
+          margin: 0vh 1vh;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+
+          &::after {
+              content: '';
+              width: 33%;
+              border-bottom: 1px solid;
+              position: absolute;
+          }
+
+          & p {
+              margin: 0;
+              padding: 0.25vh 0.75vh;
+              transition: all 0.5s;
+          }
+      }
   }
-  #navbar-mobile .navbar-options {
-    display: flex;
-    align-items: center;
-    align-self: flex-end;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  #navbar-mobile .navbar-img img {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 6vh;
-    height: 6vh;
-    border-radius: 25%;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  }
-  #navbar-mobile a {
-    position: relative;
-    color: var(--colors-light-2);
-    padding: 2vh 2.5vh;
-    margin: 0vh 1vh;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-  #navbar-mobile a::after {
-    content: "";
-    width: 33%;
-    border-bottom: 1px solid;
-    position: absolute;
-  }
-  #navbar-mobile a p {
-    margin: 0;
-    padding: 0.25vh 0.75vh;
-    transition: all 0.5s;
-  }
+  */
 }
 @-webkit-keyframes glitch {
   2%, 64% {

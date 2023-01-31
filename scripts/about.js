@@ -19,6 +19,6 @@ function writeText() {
 }
 
 
-setTimeout(() => {
-    writeText();
-}, 10)
+//setTimeout(() => {
+//    writeText();
+//}, 10)
