@@ -47,6 +47,11 @@
           user-select: none;
 }
 
+body {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
 /* Navbar */
 @media (min-width: 950px) {
   #navbar-mobile {

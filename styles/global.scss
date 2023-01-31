@@ -48,6 +48,10 @@
     user-select: none;
 }
 
+body {
+    overscroll-behavior: none;
+}
+
 /* Navbar */
 @media (min-width: 950px) {
     #navbar-mobile {
