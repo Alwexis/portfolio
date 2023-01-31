@@ -65,11 +65,26 @@ function translatePage(onLoad) {
     if (onLoad) {
         elements.forEach(element => {
             if (element.getAttribute('onload') != 'false') {
-                element.innerHTML = getTranslation(element.getAttribute('variable'));
+                element.classList.add('beingTranslated');
+                element.addEventListener('animationend', (e) => {
+                    console.log('hola')
+                    if (e.animationName === 'translatedComponent') element.classList.remove('beingTranslated');
+                })
+                setTimeout(() => {
+                    element.innerHTML = getTranslation(element.getAttribute('variable'));
+                }, 100)
             }
         });
     } else {
-        elements.forEach(element => element.innerHTML = getTranslation(element.getAttribute('variable')));
+        elements.forEach(element => {
+            element.classList.add('beingTranslated');
+            element.addEventListener('animationend', (e) => {
+                if (e.animationName === 'translatedComponent') element.classList.remove('beingTranslated');
+            })
+            setTimeout(() => {
+                element.innerHTML = getTranslation(element.getAttribute('variable'))
+            }, 100)
+        });
     }
 }
 

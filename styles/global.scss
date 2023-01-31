@@ -332,6 +332,8 @@
 }
 
 /* Custom Tags */
+
+// Translatable Component
 translatable {
     display: block;
     margin-block-start: 1em;
@@ -339,3 +341,23 @@ translatable {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
+translatable.beingTranslated {
+    animation-name: translatedComponent;
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+@keyframes translatedComponent {
+    0% {
+        opacity: 1;
+    }
+    30%, 70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+// End of Translatable Component

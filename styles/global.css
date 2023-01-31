@@ -341,4 +341,39 @@ translatable {
           margin-inline-start: 0px;
   -webkit-margin-end: 0px;
           margin-inline-end: 0px;
+}
+
+translatable.beingTranslated {
+  -webkit-animation-name: translatedComponent;
+          animation-name: translatedComponent;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+
+@-webkit-keyframes translatedComponent {
+  0% {
+    opacity: 1;
+  }
+  30%, 70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes translatedComponent {
+  0% {
+    opacity: 1;
+  }
+  30%, 70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=global.css.map */
