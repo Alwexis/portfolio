@@ -1,4 +1,4 @@
-@import url('./fonts.css');
+@import url('./global.css');
 
 * {
     user-select: none;
@@ -25,107 +25,25 @@ body {
     z-index: 0;
 }
 
-#transition-shadow {
-    height: 0%;
+.scroll-down {
     width: 100%;
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    z-index: 2;
-    &.active {
-        height: 100%;
-        transition: all 1s;
-    }
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    color: var(--colors-light-4);
+    font-family: "vcr mono";
+    animation-name: intermitent;
+    animation-duration: 1.75s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin: 2vh 0vh;
 }
 
 @media (min-width: 950px) {
-
-    #navbar {
-        display: flex;
-        align-items: center;
-        align-self: flex-end;
-        margin-top: 1vh;
-        flex-direction: row;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        color: whitesmoke;
-        font-family: "Aeroport Mono";
-
-        & a {
-            position: relative;
-            color: #fff;
-            padding: 2vh 2.5vh;
-            cursor: pointer;
-
-            &::after,
-            &::before {
-                content: "";
-                position: absolute;
-                border: 0px solid transparent;
-                width: 0%;
-                height: 0%;
-                transition: all 0.3s ease;
-            }
-
-            &::after {
-                width: 0%;
-                height: 0%;
-                top: 0;
-                left: 0;
-                border-top: 2px solid transparent;
-                border-left: 2px solid transparent;
-            }
-
-            &::before {
-                width: 0%;
-                height: 0%;
-                right: 0;
-                bottom: 0;
-                border-bottom: 2px solid transparent;
-                border-right: 2px solid transparent;
-            }
-
-            & p {
-                margin: 0;
-                padding: 0.25vh 0.75vh;
-                transition: all 0.5s;
-            }
-
-            &:hover div {
-                background-color: #fff;
-            }
-
-            &:hover p {
-                color: rgb(20, 20, 20);
-                animation: glitch 1s linear infinite;
-
-                &::after,
-                &::before {
-                    content: attr(title);
-                    position: absolute;
-                    left: 0;
-                }
-
-                &::before {
-                    animation: glitchTop 1s linear infinite;
-                    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-                    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-                }
-
-                &::after {
-                    animation: glitchBotom 1.5s linear infinite;
-                    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-                    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-                }
-            }
-
-            &:hover::before,
-            &:hover::after {
-                width: 10px;
-                height: 10px;
-                border-color: #fff;
-            }
-        }
+    .scroll-down * {
+        margin: 0vh 0.75vh;
+        font-size: 1.85vh;
+        opacity: 0.6;
     }
 
     #welcome-text {
@@ -133,7 +51,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: rgba(255, 255, 255, 0.92);
+        color: var(--colors-light-2);
         font-family: 'Aeroport Mono';
         z-index: 1;
         background-color: rgba(0, 0, 0, 0.1);
@@ -159,12 +77,12 @@ body {
                 width: 35px;
                 height: 35px;
                 border-radius: 50%;
-                background-color: rgba(255, 255, 255, 0.92);
+                background-color: var(--colors-light-4);
                 transition: all .5s;
                 cursor: pointer;
 
                 & i {
-                    color: rgb(20, 20, 20);
+                    color: var(--colors-dark-2);
                     font-size: 3vh;
                     transition: all 0.5s;
                 }
@@ -178,7 +96,13 @@ body {
                     }
 
                     &:nth-child(2) {
-                        background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+                        //background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+                        background: radial-gradient(circle farthest-corner at 28% 100%,
+                                #fcdf8f 0%,
+                                #fbd377 10%,
+                                #fa8e37 22%,
+                                #f73344 35%,
+                                transparent 65%), linear-gradient(145deg, #3051f1 10%, #c92bb7 70%);
                     }
 
                     &:nth-child(3) {
@@ -194,7 +118,7 @@ body {
                     }
 
                     & * {
-                        color: rgba(255, 255, 255, 0.92);
+                        color: var(--colors-light-4);
                     }
                 }
             }
@@ -202,7 +126,7 @@ body {
 
         & #who-am-i-txt::after {
             content: '';
-            border-right: 1px solid rgba(255, 255, 255, 0.92);
+            border-right: 1px solid var(--colors-light-2);
             margin-left: 0.5vh;
             animation-name: intermitent;
             animation-duration: 0.75s;
@@ -210,43 +134,17 @@ body {
             animation-direction: alternate;
         }
     }
-
 }
 
 @media (max-width: 950px) {
-    #navbar {
-        display: flex;
-        align-self: flex-end;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1vh;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        color: whitesmoke;
-        font-family: "Aeroport Mono";
+    body {
+        background-position: 40%;
+    }
 
-        & a {
-            position: relative;
-            color: #fff;
-            padding: 2vh 2.5vh;
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-            &::after {
-                content: '';
-                width: 33%;
-                border-bottom: 1px solid;
-                position: absolute;
-            }
-
-            & p {
-                margin: 0;
-                padding: 0.25vh 0.75vh;
-                transition: all 0.5s;
-            }
-        }
+    .scroll-down * {
+        margin: 0vh 0.5vh;
+        font-size: 1.85vh;
+        opacity: 0.6;
     }
 
     #welcome-text {
@@ -254,7 +152,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: rgba(255, 255, 255, 0.92);
+        color: var(--colors-light-2);
         font-family: 'Aeroport Mono';
         z-index: 1;
         background-color: rgba(0, 0, 0, 0.1);
@@ -279,11 +177,11 @@ body {
                 width: 35px;
                 height: 35px;
                 border-radius: 50%;
-                background-color: rgba(255, 255, 255, 0.92);
+                background-color: var(--colors-light-4);
                 transition: all .5s;
 
                 & i {
-                    color: rgb(20, 20, 20);
+                    color: var(--colors-dark-2);
                     font-size: 3vh;
                     transition: all 0.5s;
                 }
@@ -292,7 +190,7 @@ body {
 
         & #who-am-i-txt::after {
             content: '';
-            border-right: 1px solid rgba(255, 255, 255, 0.92);
+            border-right: 1px solid var(--colors-light-2);
             margin-left: 0.5vh;
             animation-name: intermitent;
             animation-duration: 0.75s;
@@ -314,56 +212,5 @@ body {
 
     100% {
         opacity: 0;
-    }
-}
-
-@keyframes glitch {
-
-    2%,
-    64% {
-        transform: translate(2px, 0) skew(0deg);
-    }
-
-    4%,
-    60% {
-        transform: translate(-2px, 0) skew(0deg);
-    }
-
-    62% {
-        transform: translate(0, 0) skew(5deg);
-    }
-}
-
-@keyframes glitchTop {
-
-    2%,
-    64% {
-        transform: translate(2px, -2px);
-    }
-
-    4%,
-    60% {
-        transform: translate(-2px, 2px);
-    }
-
-    62% {
-        transform: translate(13px, -1px) skew(-13deg);
-    }
-}
-
-@keyframes glitchBotom {
-
-    2%,
-    64% {
-        transform: translate(-2px, 0);
-    }
-
-    4%,
-    60% {
-        transform: translate(-2px, 0);
-    }
-
-    62% {
-        transform: translate(-22px, 5px) skew(21deg);
     }
 }

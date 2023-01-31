@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--colors-dark);
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 950px) {
+    about-me {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        position: relative;
+        & .about-me-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            max-width: 30%;
+            height: 100%;
+
+            & img {
+                width: 32vh;
+                height: 32vh;
+                border-radius: 2vh;
+                transform: rotateY(180deg);
+            }
+
+            & .about-me-border {
+                background: linear-gradient(to right, var(--colors-light-2) 4px, transparent 4px) 0 0, linear-gradient(to right, var(--colors-light-2) 4px, transparent 4px) 0 100%, linear-gradient(to left, var(--colors-light-2) 4px, transparent 4px) 100% 0, linear-gradient(to left, var(--colors-light-2) 4px, transparent 4px) 100% 100%, linear-gradient(to bottom, var(--colors-light-2) 4px, transparent 4px) 0 0, linear-gradient(to bottom, var(--colors-light-2) 4px, transparent 4px) 100% 0, linear-gradient(to top, var(--colors-light-2) 4px, transparent 4px) 0 100%, linear-gradient(to top, var(--colors-light-2) 4px, transparent 4px) 100% 100%;
+                background-repeat: no-repeat;
+                background-size: 20px 20px;
+                width: 40vh;
+                height: 40vh;
+                position: absolute;
+                z-index: 0;
+                animation-name: borderRotation;
+                animation-duration: 4.5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+
+        & .about-me-text {
+            width: -webkit-fill-available;
+            max-width: 60%;
+            font-family: 'Aeroport Mono';
+            & h1 {
+                color: var(--colors-light);
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 20%;
+                    height: 1px;
+                    background-color: var(--colors-light-6);
+                    margin: 1.25vh 0vh;
+                }
+            }
+            & translatable {
+                color: var(--colors-light-5);
+            }
+        }
+    }
+}
+
+@keyframes borderRotation {
+    0% {
+        transform: rotate(0deg);
+        width: 40vh;
+        height: 40vh;
+        border-radius: 0vh;
+    }
+
+    10%,
+    20% {
+        transform: rotate(45deg);
+        width: 28vh;
+        height: 28vh;
+        border-radius: 1vh;
+    }
+
+    30%,
+    40% {
+        transform: rotate(180deg);
+        width: 40vh;
+        height: 40vh;
+        border-radius: 0vh;
+    }
+
+    50%,
+    60% {
+        transform: rotate(225deg);
+        width: 28vh;
+        height: 28vh;
+        border-radius: 1vh;
+    }
+
+    70%,
+    100% {
+        transform: rotate(360deg);
+        width: 40vh;
+        height: 40vh;
+        border-radius: 0vh;
+    }
+}
+
+@keyframes textAppear {
+    0%, 80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 950px) {
+    about-me {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+}

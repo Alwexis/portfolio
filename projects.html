@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ariel Silva</title>
     <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="assets/media/icon3.png">
+    <link rel="stylesheet" href="styles/about.css">
 </head>
-
 <body>
     <section id="transition-shadow" class="transitionEnd"></section>
-    <section id="background-shadow"></section>
+
     <section id="navbar-desk">
-        <div class="navbar-img active">
+        <div class="navbar-img" onclick="changePage('index', false)">
             <img src="./assets/media/icon3.png">
         </div>
         <div class="navbar-options">
@@ -31,7 +26,7 @@
                     <translatable variable="navbar.mystack" title="Mi Stack">Mi Stack</translatable>
                 </div>
             </a>
-            <a onclick="changePage('projects', false)">
+            <a class="active">
                 <div>
                     <translatable variable="navbar.projects" title="Proyectos">Proyectos</translatable>
                 </div>
@@ -44,7 +39,7 @@
         </div>
     </section>
     <section id="navbar-mobile">
-        <div class="navbar-img">
+        <div class="navbar-img" onclick="changePage('about', false)">
             <img src="./assets/media/icon3.png">
         </div>
         <div class="navbar-options">
@@ -58,7 +53,7 @@
                     <translatable variable="navbar.mystack" title="Mi Stack">Mi Stack</translatable>
                 </div>
             </a>
-            <a onclick="changePage('projects', false)">
+            <a>
                 <div>
                     <translatable variable="navbar.projects" title="Proyectos">Proyectos</translatable>
                 </div>
@@ -71,57 +66,8 @@
         </div>
     </section>
 
-    <section id="welcome-text">
-        <span id="welcome-title">Ariel Silva</span>
-        <div id="social-media">
-            <a href="https://twitter.com/Alwexisss" target="_blank" class="social-media-icon">
-                <i class="bi bi-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/alwexis._/" target="_blank" class="social-media-icon">
-                <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://discord.com/users/776040999482032158" target="_blank" class="social-media-icon">
-                <i class="bi bi-discord"></i>
-            </a>
-            <a href="https://github.com/Alwexis" target="_blank" class="social-media-icon">
-                <i class="bi bi-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ariel-silva-rivera-a98b41223/" target="_blank"
-                class="social-media-icon">
-                <i class="bi bi-linkedin"></i>
-            </a>
-        </div>
-        <div id="who-am-i-div">
-            <span>Desarrollador </span><span id="who-am-i-txt"></span>
-        </div>
-    </section>
-    <span class="scroll-down">
-        <p>▼</p>
-        <p> </p>
-        <p>S</p>
-        <p>c</p>
-        <p>r</p>
-        <p>o</p>
-        <p>l</p>
-        <p>l</p>
-        <p>/</p>
-        <p>T</p>
-        <p>o</p>
-        <p>u</p>
-        <p>c</p>
-        <p>h</p>
-        <p> </p>
-        <p>D</p>
-        <p>o</p>
-        <p>w</p>
-        <p>n</p>
-        <p> </p>
-        <p>▼</p>
-    </span>
-    
-    <script src="./scripts/data.js"></script>
-    <script src="./scripts/global.js"></script>
-    <script src="./scripts/home.js"></script>
-</body>
+    <span style="font-family: 'Aeroport Mono'; color: var(--colors-light-2);">SOON PROJECTS</span>
 
+    <script src="./scripts/global.js"></script>
+</body>
 </html>

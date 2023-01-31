@@ -1,20 +1,3 @@
-let __WIDTH__ = document.documentElement.clientWidth //window.innerWidth;
-let __HEIGHT__ = document.documentElement.clientHeight //window.innerHeight;
-const __BACKGROUND__ = document.getElementById('background');
-
-window.onload = () => {
-    document.querySelector('body').style.width = __WIDTH__ + 'px';
-    document.querySelector('body').style.height = __HEIGHT__ + 'px';
-    writingAnimationHandler();
-}
-
-window.onresize = () => {
-    __WIDTH__ = document.documentElement.clientWidth //window.innerWidth;
-    __HEIGHT__ = document.documentElement.clientHeight //window.innerHeight;
-    document.querySelector('body').style.width = __WIDTH__ + 'px';
-    document.querySelector('body').style.height = __HEIGHT__ + 'px';
-}
-
 /* Animated Text */
 const __TEXTS__ = ['Software', 'Web', 'Full-Stack', 'Movil']
 const __ANIMATED_TEXT__ = document.getElementById('who-am-i-txt');
@@ -44,3 +27,11 @@ function writingAnimationHandler() {
         }
     }, 100);
 }
+
+writingAnimationHandler();
+
+__BODY__.addEventListener('animationend', (e) => {
+    if (e.animationName === 'changePageTransition') {
+        if (__PAGE__ === __PAGES__[__ACTUAL_PAGE__]) __TRANSITION_SHADOW__.classList.remove('transitionEnd');
+    }
+});

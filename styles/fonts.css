@@ -1,3 +1,57 @@
+/*  AlteHaasGrotesk */
+@font-face {
+    font-family: 'Alte Haas Grotesk';
+    src: url('../assets/fonts/AlteHaasGroteskRegular.ttf');
+}
+
+/* Helvetica */
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica-Oblique.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica-BoldOblique.ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica-Light.ttf');
+    font-weight: lighter;
+}
+
+/* VCR Mono */
+
+@font-face {
+    font-family: 'vcr mono';
+    src: url('../assets/fonts/VCR_OSD_MONO.ttf');
+}
+
+/* Odachi */
+@font-face {
+    font-family: 'Odachi';
+    src: url('../assets/fonts/Odachi.ttf');
+}
+
 /* Aeroport Mono */
 @font-face {
     font-family: 'Aeroport';

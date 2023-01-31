@@ -1,0 +1,341 @@
+@import url('./fonts.css');
+
+:root {
+    --colors-dark: rgb(28, 28, 30);
+    --colors-dark-2: rgb(44, 44, 46);
+    --colors-dark-3: rgb(58, 58, 60);
+    --colors-dark-4: rgb(72, 72, 74);
+    --colors-dark-5: rgb(99, 99, 102);
+    --colors-dark-6: rgb(142, 142, 147);
+
+    --colors-light: rgb(242, 242, 247);
+    --colors-light-2: rgb(229, 229, 234);
+    --colors-light-3: rgb(209, 209, 214);
+    --colors-light-4: rgb(199, 199, 204);
+    --colors-light-5: rgb(174, 174, 178);
+    --colors-light-6: rgb(142, 142, 147);
+
+    --colors-red: rgb(255, 79, 68);
+    --colors-orange: rgb(255, 169, 20);
+    --colors-yellow: rgb(255, 224, 20);
+    --colors-green: rgb(60, 225, 85);
+    --colors-mint: rgb(108, 224, 219);
+    --colors-teal: rgb(68, 212, 237);
+    --colors-cyan: rgb(90, 205, 250);
+    --colors-blue: rgb(20, 142, 255);
+    --colors-indigo: rgb(99, 97, 242);
+    --colors-purple: rgb(204, 101, 255);
+    --colors-pink: rgb(255, 65, 105);
+    --colors-brown: rgb(182, 152, 114);
+    --colors-gray: rgb(162, 162, 167);
+
+    --colors-red-2: rgb(255, 49, 38);
+    --colors-orange-2: rgb(245, 139, 0);
+    --colors-yellow-2: rgb(245, 194, 0);
+    --colors-green-2: rgb(30, 195, 55);
+    --colors-mint-2: rgb(0, 189, 180);
+    --colors-teal-2: rgb(46, 167, 189);
+    --colors-cyan-2: rgb(65, 175, 220);
+    --colors-blue-2: rgb(0, 112, 245);
+    --colors-indigo-2: rgb(84, 82, 204);
+    --colors-purple-2: rgb(159, 75, 201);
+    --colors-pink-2: rgb(245, 35, 75);
+    --colors-brown-2: rgb(152, 122, 84);
+    --colors-gray-2: rgb(132, 132, 137);
+}
+
+* {
+    user-select: none;
+}
+
+/* Navbar */
+@media (min-width: 950px) {
+    #navbar-mobile {
+        display: none;
+    }
+
+    #navbar-desk {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1vh;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        color: var(--colors-light-2);
+        font-family: "Aeroport Mono";
+        width: 100%;
+
+        & .navbar-options {
+            display: flex;
+            align-items: center;
+            align-self: flex-end;
+            flex-direction: row;
+        }
+
+        & .navbar-img {
+            margin-left: 2vh;
+            img {
+                width: 8vh;
+                height: 8vh;
+                cursor: pointer;
+                border-radius: 25%;
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            }
+        }
+
+        & a,
+        & .navbar-img,
+        & a.active,
+        & .navbar-img.active {
+            position: relative;
+            color: var(--colors-light-2);
+
+            &:not(.navbar-img) {
+                padding: 2vh 2.5vh;
+            }
+
+            &.navbar-img {
+                padding: 1vh 1.5vh;
+            }
+
+            cursor: pointer;
+
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                border: 0px solid transparent;
+                width: 0%;
+                height: 0%;
+                transition: all 0.3s ease;
+            }
+
+            &::after {
+                width: 0%;
+                height: 0%;
+                top: 0;
+                left: 0;
+                border-top: 2px solid transparent;
+                border-left: 2px solid transparent;
+            }
+
+            &::before {
+                width: 0%;
+                height: 0%;
+                right: 0;
+                bottom: 0;
+                border-bottom: 2px solid transparent;
+                border-right: 2px solid transparent;
+            }
+
+            & translatable {
+                margin: 0;
+                padding: 0.25vh 0.75vh;
+                transition: all 0.5s;
+            }
+
+            &:hover div,
+            &.active div {
+                background-color: var(--colors-light-2);
+            }
+
+            &:hover translatable,
+            &.active div translatable {
+                color: var(--colors-dark-2);
+                animation: glitch 1s linear infinite;
+
+                &::after,
+                &::before {
+                    content: attr(title);
+                    position: absolute;
+                    left: 0;
+                }
+
+                &::before {
+                    animation: glitchTop 1s linear infinite;
+                    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+                    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+                }
+
+                &::after {
+                    animation: glitchBotom 1.5s linear infinite;
+                    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+                    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+                }
+            }
+
+            &:hover::before,
+            &:hover::after,
+            &.active::after,
+            &.active::before {
+                width: 10px;
+                height: 10px;
+                border-color: var(--colors-light-2);
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    #navbar-desk {
+        display: none;
+    }
+
+    #navbar-mobile {
+        display: flex;
+        align-items: center;
+        margin-top: 1vh;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        color: var(--colors-light-2);
+        font-family: "Aeroport Mono";
+
+        & .navbar-options {
+            display: flex;
+            align-items: center;
+            align-self: flex-end;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        & .navbar-img img {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6vh;
+            height: 6vh;
+            border-radius: 25%;
+            box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+        }
+
+        & a {
+            position: relative;
+            color: var(--colors-light-2);
+            padding: 2vh 2.5vh;
+            margin: 0vh 1vh;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+
+            &::after {
+                content: '';
+                width: 33%;
+                border-bottom: 1px solid;
+                position: absolute;
+            }
+
+            & p {
+                margin: 0;
+                padding: 0.25vh 0.75vh;
+                transition: all 0.5s;
+            }
+        }
+    }
+}
+
+@keyframes glitch {
+
+    2%,
+    64% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+
+    62% {
+        transform: translate(0, 0) skew(5deg);
+    }
+}
+
+@keyframes glitchTop {
+
+    2%,
+    64% {
+        transform: translate(2px, -2px);
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 2px);
+    }
+
+    62% {
+        transform: translate(13px, -1px) skew(-13deg);
+    }
+}
+
+@keyframes glitchBotom {
+
+    2%,
+    64% {
+        transform: translate(-2px, 0);
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 0);
+    }
+
+    62% {
+        transform: translate(-22px, 5px) skew(21deg);
+    }
+}
+
+// Transition Animation
+#transition-shadow {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+    z-index: 999;
+    display: none;
+}
+
+.transition {
+    animation-name: changePageTransition;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    display: initial !important;
+}
+
+.transitionEnd {
+    animation-name: changePageTransition;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    display: initial !important;
+}
+
+@keyframes changePageTransition {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Custom Tags */
+translatable {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
