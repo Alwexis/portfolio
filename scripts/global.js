@@ -19,6 +19,7 @@ function changePage(page, confirm) {
     __TRANSITION_SHADOW__.classList.toggle('transition');
     if (confirm) {
         restartInterval();
+        clearInterval(__scrollingInterval__);
         __CHANGING_PAGE__ = true;
         window.location.replace('./' + page + '.html');
     }
@@ -50,6 +51,11 @@ window.onwheel = (e) => {
     if (__ACTUAL_PAGE__ === 0 && e.deltaY < 0) return;
     if (__ACTUAL_PAGE__ === __PAGES__.length - 1 && e.deltaY > 0) return;
     if (window.navigator.userAgentData.mobile) return;
+    if (__SCROLLING__) {
+        __SCROLLING__ = false;
+        return;
+    }
+    if (e.target.classList.toString().includes('slider') || e.target.classList.toString().includes('swiper')) return;
     setupInterval();
     __ACTUAL_SCROLLING__ += e.deltaY;
     if (__ACTUAL_SCROLLING__ >= 450) {
@@ -78,6 +84,22 @@ __BODY__.addEventListener('animationstart', (e) => {
     }
 });
 
+//* Checking if the user is scrolling, if so, the changePage function will not be called.
+let __SCROLLING__ = false;
+//* Setting up an interval to check if the user is scrolling.
+const __scrollingInterval__ = setInterval(() => {
+    if (__SCROLLING__) {
+        __SCROLLING__ = false;
+    }
+}, 250)
+
+const __ABOUT_PAGE__ = document.querySelector('#mainComponent');
+if (__ABOUT_PAGE__) {
+    __ABOUT_PAGE__.onscroll = (e) => {
+        __SCROLLING__ = true;
+    }
+}
+
 __BODY__.ontouchstart = (e) => {
     __BODY__.setAttribute('firstYTouchLocation', e.touches[0].clientY)
     __BODY__.setAttribute('firstTouchLocationTimestamp', Math.round(e.timeStamp))
@@ -85,6 +107,10 @@ __BODY__.ontouchstart = (e) => {
 
 __BODY__.ontouchend = (e) => {
     if (__CHANGING_PAGE__) return;
+    if (__SCROLLING__) {
+        __SCROLLING__ = false;
+        return;
+    }
     if (e.target.classList.toString().includes('swiper')) return;
     const firstTouchLocationTimestamp = Math.round(__BODY__.getAttribute('firstTouchLocationTimestamp'));
     const currentTouchLocationTimestamp = Math.round(e.timeStamp);

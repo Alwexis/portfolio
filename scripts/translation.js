@@ -13,7 +13,25 @@ const __TRANSLATIONS__ = {
             "Actualmente estoy estudiando en Duoc UC desde el año 2021, en la carrera de Ingeniería en Informática y me encuentro en mi 5to semestre.",
             "Mis intereses profesionales están enfocados en el desarrollo de aplicaciones web, de videojuegos y de aplicaciones móviles híbridas. También estoy bastante interesado en todo lo relacionado con Inteligencia Artificial y Machine Learning.",
             "Mi 'meta' como persona es poder llegar a ser un desarrollador destacado dentro de la industria, y si es posible, poder influir positivamente en la sociedad utilizando la tecnología."
-        ]
+        ],
+        "experience": {
+            "title": "Experiencia",
+            "text": "Estas son mis experiencias laborales que conforman mi curriculum, en las cuales he aprendido mucho de la empresa y el área en el que ejercí.",
+            "experiences": [
+                {
+                    "date": "Sept. 2021 - Dic. 2021",
+                    "company": "DuocUC",
+                    "jobtitle": "Profesor de Ayudantías en Python",
+                    "description": "Trabajé durante unos meses como profesor de clases de ayudantía en la asignatura de programación de Algoritmos y Estructuras de Datos en Python, en la cual enseñé a los alumnos las bases de la programación, tanto su estructura como su lógica, y también las bases de Python."
+                },
+                {
+                    "date": "Ener. 2023 - Actualidad",
+                    "company": "CETECOM",
+                    "jobtitle": "Mantención general de Equipos Tecnológicos",
+                    "description": "Me encuentro actualmente realizando mi práctica laboral en CETECOM. Me desempeño como técnico de mantención de equipos tecnológicos, en la cual me encargo de realizar la mantención de los equipos de la 'empresa', tanto de hardware como de software, además de realizar atención cliente ya sea de forma presencial o telefónica."
+                }
+            ]
+        }
     },
     "EN": {
         "navbar": {
@@ -27,7 +45,25 @@ const __TRANSLATIONS__ = {
             "Currently, I'm studying at Duoc UC since 2021 in the Computer Engineering program and I am in my 5th semester.",
             "My professional interests are focused on the development of web applications, video games, and hybrid mobile applications. I'm also quite interested in everything related to Artificial Intelligence and Machine Learning.",
             "My 'goal' as a person and professional is to become a prominent developer within the industry, and if possible, to positively impact society using technology."
-        ]
+        ],
+        "experience": {
+            "title": "Experience",
+            "text": "These are my work experiences that make up my resume, in which I have learned a lot from the company and the area in which I worked.",
+            "experiences": [
+                {
+                    "date": "Sept. 2021 - Dec. 2021",
+                    "company": "DuocUC",
+                    "jobtitle": "Python Tutor",
+                    "description": "I worked for a few months as a teaching assistant in the subject of Algorithms and Data Structures Programming in Python, in which I taught the students the basics of programming, both its structure and logic, and also the basics of Python."
+                },
+                {
+                    "date": "Ener. 2023 - Present",
+                    "company": "CETECOM",
+                    "jobtitle": "General Maintenance of Technological Equipment",
+                    "description": "I am currently doing my 'work practice' at CETECOM. I work as a technical maintenance of technological equipment, in which I am responsible for maintaining the company's equipment, both hardware and software, as well as providing customer service either in person or by phone."
+                }
+            ]
+        }
     }
 }
 
@@ -42,9 +78,12 @@ function toggleLang() {
 }
 
 function getTranslation(keys) {
+    if (!keys) return;
     let splittedKeys = keys.split('.');
     if (splittedKeys.length > 0) {
         lastKey = __TRANSLATIONS__[__LANGUAGE__];
+        console.log(lastKey)
+        if (!lastKey) return;
         splittedKeys.forEach(key => {
             lastKey = lastKey[key];
         })

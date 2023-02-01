@@ -53,6 +53,7 @@ body {
     font-size: 2.4vh;
     color: var(--colors-light-6);
     font-weight: 300;
+    text-align: center;
   }
   translatable.slider-item-content-header.slider-item-content-title, translatable.slider-item-content-title.slider-item-content-title, translatable.slider-item-content-subtitle.slider-item-content-title, translatable.slider-item-content-text.slider-item-content-title {
     font-size: 3vh;
@@ -65,6 +66,7 @@ body {
     color: var(--colors-light-6);
     opacity: 0.8;
     font-weight: 300;
+    text-align: center;
   }
   translatable.slider-item-content-header.slider-item-content-text, translatable.slider-item-content-title.slider-item-content-text, translatable.slider-item-content-subtitle.slider-item-content-text, translatable.slider-item-content-text.slider-item-content-text {
     font-size: 2vh;
@@ -234,6 +236,7 @@ body {
     font-size: 2.4vh;
     color: var(--colors-light-6);
     font-weight: 300;
+    text-align: center;
   }
   translatable.slider-item-content-header.slider-item-content-title, translatable.slider-item-content-title.slider-item-content-title, translatable.slider-item-content-subtitle.slider-item-content-title, translatable.slider-item-content-text.slider-item-content-title {
     font-size: 3vh;
@@ -246,6 +249,7 @@ body {
     color: var(--colors-light-6);
     opacity: 0.8;
     font-weight: 300;
+    text-align: center;
   }
   translatable.slider-item-content-header.slider-item-content-text, translatable.slider-item-content-title.slider-item-content-text, translatable.slider-item-content-subtitle.slider-item-content-text, translatable.slider-item-content-text.slider-item-content-text {
     font-size: 2vh;

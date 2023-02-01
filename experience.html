@@ -42,12 +42,12 @@
         </div>
     </section>
 
-    <experience>
+    <experience id="mainComponent">
         <div class="experience-title">
             <translatable class="title" onload="false" variable="experience.title">
                 Experiencia
             </translatable>
-            <translatable class="content" variable="experiencie.text">
+            <translatable class="content" variable="experience.text">
                 Estas son mis experiencias laborales que conforman mi curriculum, en las cuales he aprendido mucho de la
                 empresa y el área en el que ejercí.
             </translatable>
@@ -59,16 +59,16 @@
                         <img class="slider-image" src="assets/media/DuocUC.png" alt="SliderImg">
                     </div>
                     <div class="slider-item-content">
-                        <translatable class="slider-item-content-header">
+                        <translatable variable="experience.experiences.0.date" class="slider-item-content-header">
                             Sept. 2021 - Dic. 2021
                         </translatable>
-                        <translatable class="slider-item-content-title">
+                        <translatable variable="experience.experiences.0.company" class="slider-item-content-title">
                             DuocUC
                         </translatable>
-                        <translatable class="slider-item-content-subtitle">
+                        <translatable variable="experience.experiences.0.jobtitle" class="slider-item-content-subtitle">
                             Profesor de Ayudantías en Python
                         </translatable>
-                        <translatable class="slider-item-content-text">
+                        <translatable variable="experience.experiences.0.description" class="slider-item-content-text">
                             Trabajé durante unos meses como profesor de clases de ayudantía en la asignatura de
                             programación de Algoritmos y Estructuras de Datos en Python, en la cual enseñé a los alumnos
                             las bases de la programación, tanto su estructura como su lógica, y también las bases de
@@ -82,17 +82,17 @@
                         <img class="slider-image" src="assets/media/CETECOM.png" alt="SliderImg">
                     </div>
                     <div class="slider-item-content">
-                        <translatable class="slider-item-content-header">
+                        <translatable variable="experience.experiences.1.date" class="slider-item-content-header">
                             Ener. 2023 - Actualidad
                         </translatable>
-                        <translatable class="slider-item-content-title">
+                        <translatable variable="experience.experiences.1.company" class="slider-item-content-title">
                             CETECOM
                         </translatable>
-                        <translatable class="slider-item-content-subtitle">
+                        <translatable variable="experience.experiences.1.jobtitle"class="slider-item-content-subtitle">
                             Mantención general de Equipos Tecnológicos
                         </translatable>
-                        <translatable class="slider-item-content-text">
-                            Me encuentro actualmente realizando mi práctica profesional en CETECOM. Me desempeño como
+                        <translatable variable="experience.experiences.1.description" class="slider-item-content-text">
+                            Me encuentro actualmente realizando mi práctica laboral en CETECOM. Me desempeño como
                             técnico de mantención de equipos tecnológicos, en la cual me encargo de realizar la
                             mantención de los equipos de la 'empresa', tanto de hardware como de software, además de
                             realizar atención cliente ya sea de forma presencial o telefónica.
@@ -111,8 +111,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./scripts/translation.js"></script>
-    <script src="./scripts/experiencie.js"></script>
     <script src="./scripts/global.js"></script>
+    <script src="./scripts/experiencie.js"></script>
 </body>
 
 </html>
