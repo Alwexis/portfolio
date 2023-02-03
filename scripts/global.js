@@ -80,7 +80,7 @@ __BODY__.addEventListener('animationstart', (e) => {
         if (__PAGE__ === '') return;
         setTimeout(() => {
             changePage(__PAGE__, true);
-        }, 200)
+        }, 400)
     }
 });
 

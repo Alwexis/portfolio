@@ -16,19 +16,31 @@ const __TRANSLATIONS__ = {
         ],
         "experience": {
             "title": "Experiencia",
-            "text": "Estas son mis experiencias laborales que conforman mi curriculum, en las cuales he aprendido mucho de la empresa y el área en el que ejercí.",
+            "text": "Estas son mis experiencias laborales que conforman mi curriculum, en las cuales he aprendido mucho de la empresa y el área en el que ejercí. En caso de querer ver mis logros tanto académicos como generales, scrollea hacia la derecha ►",
             "experiences": [
                 {
                     "date": "Sept. 2021 - Dic. 2021",
                     "company": "DuocUC",
                     "jobtitle": "Profesor de Ayudantías en Python",
-                    "description": "Trabajé durante unos meses como profesor de clases de ayudantía en la asignatura de programación de Algoritmos y Estructuras de Datos en Python, en la cual enseñé a los alumnos las bases de la programación, tanto su estructura como su lógica, y también las bases de Python."
+                    "description": "Trabajé durante unos meses como profesor de clases de ayudantía en la asignatura de programación de Algoritmos y Estructuras de Datos en Python, en la cual enseñé a los alumnos las bases de la programación, tanto su estructura como su lógica, y también las bases de Python.",
+                    "skills": "Habilidades Empleadas",
+                    "skills_list": [
+                        "Python",
+                        "Numpy",
+                        "Visual Studio Code"
+                    ]
                 },
                 {
                     "date": "Ener. 2023 - Actualidad",
                     "company": "CETECOM",
                     "jobtitle": "Mantención general de Equipos Tecnológicos",
-                    "description": "Me encuentro actualmente realizando mi práctica laboral en CETECOM. Me desempeño como técnico de mantención de equipos tecnológicos, en la cual me encargo de realizar la mantención de los equipos de la 'empresa', tanto de hardware como de software, además de realizar atención cliente ya sea de forma presencial o telefónica."
+                    "description": "Me encuentro actualmente realizando mi práctica laboral en CETECOM. Me desempeño como técnico de mantención de equipos tecnológicos, en la cual me encargo de realizar la mantención de los equipos de la 'empresa', tanto de hardware como de software, además de realizar atención cliente ya sea de forma presencial o telefónica.",
+                    "skills": "Habilidades Empleadas",
+                    "skills_list": [
+                        "Sistemas Operativos",
+                        "Hardware",
+                        "Software"
+                    ]
                 }
             ]
         }
@@ -48,19 +60,31 @@ const __TRANSLATIONS__ = {
         ],
         "experience": {
             "title": "Experience",
-            "text": "These are my work experiences that make up my resume, in which I have learned a lot from the company and the area in which I worked.",
+            "text": "These are my work experiences that make up my resume, in which I have learned a lot from the company and the area in which I worked. If you want to see my academic and general achievements, scroll to the right ►",
             "experiences": [
                 {
                     "date": "Sept. 2021 - Dec. 2021",
                     "company": "DuocUC",
                     "jobtitle": "Python Tutor",
-                    "description": "I worked for a few months as a teaching assistant in the subject of Algorithms and Data Structures Programming in Python, in which I taught the students the basics of programming, both its structure and logic, and also the basics of Python."
+                    "description": "I worked for a few months as a teaching assistant in the subject of Algorithms and Data Structures Programming in Python, in which I taught the students the basics of programming, both its structure and logic, and also the basics of Python.",
+                    "skills": "Empleated Skills",
+                    "skills_list": [
+                        "Python",
+                        "Numpy",
+                        "Visual Studio Code"
+                    ]
                 },
                 {
                     "date": "Ener. 2023 - Present",
                     "company": "CETECOM",
                     "jobtitle": "General Maintenance of Technological Equipment",
-                    "description": "I am currently doing my 'work practice' at CETECOM. I work as a technical maintenance of technological equipment, in which I am responsible for maintaining the company's equipment, both hardware and software, as well as providing customer service either in person or by phone."
+                    "description": "I am currently doing my 'work practice' at CETECOM. I work as a technical maintenance of technological equipment, in which I am responsible for maintaining the company's equipment, both hardware and software, as well as providing customer service either in person or by phone.",
+                    "skills": "Empleated Skills",
+                    "skills_list": [
+                        "OS",
+                        "Hardware",
+                        "Software"
+                    ]
                 }
             ]
         }
@@ -82,7 +106,6 @@ function getTranslation(keys) {
     let splittedKeys = keys.split('.');
     if (splittedKeys.length > 0) {
         lastKey = __TRANSLATIONS__[__LANGUAGE__];
-        console.log(lastKey)
         if (!lastKey) return;
         splittedKeys.forEach(key => {
             lastKey = lastKey[key];

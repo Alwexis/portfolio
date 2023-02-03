@@ -297,8 +297,8 @@ body {
 .transition {
   -webkit-animation-name: changePageTransition;
           animation-name: changePageTransition;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease-in;
           animation-timing-function: ease-in;
   -webkit-animation-direction: normal;
@@ -313,8 +313,8 @@ body {
 .transitionEnd {
   -webkit-animation-name: changePageTransition;
           animation-name: changePageTransition;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
   animation-direction: reverse;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/experience.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -44,67 +45,118 @@
 
     <experience id="mainComponent">
         <div class="experience-title">
-            <translatable class="title" onload="false" variable="experience.title">
+            <translatable class="title" variable="experience.title">
                 Experiencia
             </translatable>
             <translatable class="content" variable="experience.text">
                 Estas son mis experiencias laborales que conforman mi curriculum, en las cuales he aprendido mucho de la
-                empresa y el área en el que ejercí.
+                empresa y el área en el que ejercí. En caso de querer ver 
             </translatable>
         </div>
-        <div class="swiper-container">
+        <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="slider-item swiper-slide">
-                    <div class="slider-image-wrapper">
-                        <img class="slider-image" src="assets/media/DuocUC.png" alt="SliderImg">
-                    </div>
-                    <div class="slider-item-content">
-                        <translatable variable="experience.experiences.0.date" class="slider-item-content-header">
-                            Sept. 2021 - Dic. 2021
-                        </translatable>
-                        <translatable variable="experience.experiences.0.company" class="slider-item-content-title">
-                            DuocUC
-                        </translatable>
-                        <translatable variable="experience.experiences.0.jobtitle" class="slider-item-content-subtitle">
-                            Profesor de Ayudantías en Python
-                        </translatable>
-                        <translatable variable="experience.experiences.0.description" class="slider-item-content-text">
-                            Trabajé durante unos meses como profesor de clases de ayudantía en la asignatura de
-                            programación de Algoritmos y Estructuras de Datos en Python, en la cual enseñé a los alumnos
-                            las bases de la programación, tanto su estructura como su lógica, y también las bases de
-                            Python.
-                        </translatable>
+                    <div class="swiper-item-content">
+                        <div class="slider-item-image">
+                            <img class="slider-image" src="assets/media/DuocUC.png" alt="SliderImg">
+                        </div>
+                        <div class="slider-item-content">
+                            <div class="slider-item-content-header">
+                                <translatable variable="experience.experiences.0.date"
+                                    class="slider-item-content-date">
+                                    Sept. 2021 - Dic. 2021
+                                </translatable>
+                                <translatable variable="experience.experiences.0.company"
+                                    class="slider-item-content-title">
+                                    DuocUC
+                                </translatable>
+                                <translatable variable="experience.experiences.0.jobtitle"
+                                    class="slider-item-content-subtitle">
+                                    Profesor de Ayudantías en Python
+                                </translatable>
+                            </div>
+                            <translatable variable="experience.experiences.0.description"
+                                class="slider-item-content-text">
+                                Trabajé durante unos meses como profesor de clases de ayudantía en la asignatura de
+                                programación de Algoritmos y Estructuras de Datos en Python, en la cual enseñé a los
+                                alumnos
+                                las bases de la programación, tanto su estructura como su lógica, y también las bases de
+                                Python.
+                            </translatable>
+                            <div class="slider-item-content-footer">
+                                <translatable variable="experience.experiences.0.skills"
+                                    class="slider-item-content-footer-title">
+                                    Habilidades Empleadas
+                                </translatable>
+                                <div class="slider-item-content-footer-skills">
+                                    <translatable variable="experience.experiences.0.skills_list.0"
+                                        class="slider-item-content-footer-skill">
+                                        Python
+                                    </translatable>
+                                    <translatable variable="experience.experiences.0.skills_list.1"
+                                        class="slider-item-content-footer-skill">
+                                        Numpy
+                                    </translatable>
+                                    <translatable variable="experience.experiences.0.skills_list.2"
+                                        class="slider-item-content-footer-skill">
+                                        Visual Studio Code
+                                    </translatable>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
                 <div class="slider-item swiper-slide">
-                    <div class="slider-image-wrapper">
-                        <img class="slider-image" src="assets/media/CETECOM.png" alt="SliderImg">
-                    </div>
-                    <div class="slider-item-content">
-                        <translatable variable="experience.experiences.1.date" class="slider-item-content-header">
-                            Ener. 2023 - Actualidad
-                        </translatable>
-                        <translatable variable="experience.experiences.1.company" class="slider-item-content-title">
-                            CETECOM
-                        </translatable>
-                        <translatable variable="experience.experiences.1.jobtitle"class="slider-item-content-subtitle">
-                            Mantención general de Equipos Tecnológicos
-                        </translatable>
-                        <translatable variable="experience.experiences.1.description" class="slider-item-content-text">
-                            Me encuentro actualmente realizando mi práctica laboral en CETECOM. Me desempeño como
-                            técnico de mantención de equipos tecnológicos, en la cual me encargo de realizar la
-                            mantención de los equipos de la 'empresa', tanto de hardware como de software, además de
-                            realizar atención cliente ya sea de forma presencial o telefónica.
-                        </translatable>
+                    <div class="swiper-item-content">
+                        <div class="slider-item-image">
+                            <img class="slider-image" src="assets/media/CETECOM.png" alt="SliderImg">
+                        </div>
+                        <div class="slider-item-content">
+                            <div class="slider-item-content-header">
+                                <translatable variable="experience.experiences.1.date"
+                                    class="slider-item-content-date">
+                                    Ener. 2023 - Actualidad
+                                </translatable>
+                                <translatable variable="experience.experiences.1.company"
+                                    class="slider-item-content-title">
+                                    CETECOM
+                                </translatable>
+                                <translatable variable="experience.experiences.1.jobtitle"
+                                    class="slider-item-content-subtitle">
+                                    Mantención general de Equipos Tecnológicos
+                                </translatable>
+                            </div>
+                            <translatable variable="experience.experiences.1.description"
+                                class="slider-item-content-text">
+                                Me encuentro actualmente realizando mi práctica laboral en CETECOM. Me desempeño como
+                                técnico de mantención de equipos tecnológicos, en la cual me encargo de realizar la
+                                mantención de los equipos de la 'empresa', tanto de hardware como de software, además de
+                                realizar atención cliente ya sea de forma presencial o telefónica.
+                            </translatable>
+                            <div class="slider-item-content-footer">
+                                <translatable variable="experience.experiences.1.skills"
+                                    class="slider-item-content-footer-title">
+                                    Habilidades Empleadas
+                                </translatable>
+                                <div class="slider-item-content-footer-skills">
+                                    <translatable variable="experience.experiences.1.skills_list.0"
+                                        class="slider-item-content-footer-skill">
+                                        Sistemas Operativos
+                                    </translatable>
+                                    <translatable variable="experience.experiences.1.skills_list.1"
+                                        class="slider-item-content-footer-skill">
+                                        Hardware
+                                    </translatable>
+                                    <translatable variable="experience.experiences.1.skills_list.2"
+                                        class="slider-item-content-footer-skill">
+                                        Software
+                                    </translatable>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="slider-buttons">
-                <button class="swiper-button-prev">Prev</button>
-                <button class="swiper-button-next">Next</button>
-            </div>
-
             <div class="swiper-pagination"></div>
         </div>
     </experience>
