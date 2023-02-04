@@ -67,16 +67,42 @@ body {
     margin: 1vh 0vh;
   }
   about-me .about-me-text translatable {
-    color: var(--colors-light-5);
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-    transition-delay: 0.2s;
+    color: var(--colors-light-6);
+    transform: translateY(40%);
+    opacity: 0;
+    -webkit-animation-name: textAppear;
+            animation-name: textAppear;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 0.25s;
+            animation-delay: 0.25s;
   }
   about-me .about-me-text translatable.first {
     margin-top: 0vh;
   }
   about-me .about-me-text translatable.last {
-    margin-bottom: 0vh;
+    margin-bottom: 2vh;
+  }
+  about-me .about-me-text .toStack {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: -6vh;
+    color: var(--colors-light);
+    -webkit-animation-name: intermitente;
+            animation-name: intermitente;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
   }
   @-webkit-keyframes borderRotation {
     0% {
@@ -194,6 +220,7 @@ body {
   about-me .about-me-text h1 {
     color: var(--colors-light);
     margin: 0;
+    font-size: 3vh;
   }
   about-me .about-me-text h1::after {
     content: "";
@@ -204,16 +231,45 @@ body {
     margin: 1vh 0vh;
   }
   about-me .about-me-text translatable {
-    color: var(--colors-light-5);
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-    transition-delay: 0.2s;
+    color: var(--colors-light-6);
+    font-size: 1.8vh;
+    margin: 1vh 0vh;
+    transform: translateY(40%);
+    opacity: 0;
+    -webkit-animation-name: textAppear;
+            animation-name: textAppear;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 0.25s;
+            animation-delay: 0.25s;
   }
   about-me .about-me-text translatable.first {
     margin-top: 0vh;
   }
   about-me .about-me-text translatable.last {
     margin-bottom: 0vh;
+  }
+  about-me .about-me-text .toStack {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: -5vh;
+    font-size: 1.8vh;
+    color: var(--colors-light);
+    -webkit-animation-name: intermitente;
+            animation-name: intermitente;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
   }
   @-webkit-keyframes borderRotation {
     0% {
@@ -278,5 +334,47 @@ body {
       height: 26vh;
       border-radius: 0vh;
     }
+  }
+}
+@-webkit-keyframes intermitente {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes intermitente {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes textAppear {
+  from {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes textAppear {
+  from {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }/*# sourceMappingURL=about.css.map */

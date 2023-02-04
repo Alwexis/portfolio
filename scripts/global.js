@@ -8,7 +8,6 @@ let __CHANGING_PAGE__ = true;
 const __PAGES__ = [
     'index',
     'about',
-    'stack',
     'projects',
     'experience'
 ];
@@ -80,7 +79,7 @@ __BODY__.addEventListener('animationstart', (e) => {
         if (__PAGE__ === '') return;
         setTimeout(() => {
             changePage(__PAGE__, true);
-        }, 400)
+        }, 400);
     }
 });
 
@@ -93,16 +92,13 @@ const __scrollingInterval__ = setInterval(() => {
     }
 }, 250)
 
-const __ABOUT_PAGE__ = document.querySelector('#mainComponent');
-if (__ABOUT_PAGE__) {
-    __ABOUT_PAGE__.onscroll = (e) => {
-        __SCROLLING__ = true;
-    }
+__BODY__.onscroll = (e) => {
+    __SCROLLING__ = true;
 }
 
 __BODY__.ontouchstart = (e) => {
     __BODY__.setAttribute('firstYTouchLocation', e.touches[0].clientY)
-    __BODY__.setAttribute('firstTouchLocationTimestamp', Math.round(e.timeStamp))
+    __BODY__.setAttribute('firstYTouchTime', Math.round(e.timeStamp))
 }
 
 __BODY__.ontouchend = (e) => {
@@ -112,7 +108,7 @@ __BODY__.ontouchend = (e) => {
         return;
     }
     if (e.target.classList.toString().includes('swiper')) return;
-    const firstTouchLocationTimestamp = Math.round(__BODY__.getAttribute('firstTouchLocationTimestamp'));
+    const firstTouchLocationTimestamp = Math.round(__BODY__.getAttribute('firstYTouchTime'));
     const currentTouchLocationTimestamp = Math.round(e.timeStamp);
     const differenceBetweenTimestamps = Math.abs(firstTouchLocationTimestamp - currentTouchLocationTimestamp);
     if (differenceBetweenTimestamps < 50 || differenceBetweenTimestamps > 400) return;
@@ -137,6 +133,7 @@ __BODY__.ontouchend = (e) => {
         }
     }
     __BODY__.setAttribute('firstYTouchLocation', 0);
+    __BODY__.setAttribute('firstYTouchTime', 0);
 }
 
 __BODY__.onmousedown = (e) => {
@@ -194,10 +191,4 @@ window.onresize = () => {
     __HEIGHT__ = document.documentElement.clientHeight;
     document.querySelector('body').style.width = __WIDTH__ + 'px';
     document.querySelector('body').style.height = __HEIGHT__ + 'px';
-}
-
-function toggleMenu() {
-    console.log('toggle')
-    const __MENU__ = document.querySelector('#navbar-mobile .navbar-options');
-    __MENU__.classList.toggle('active');
 }

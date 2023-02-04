@@ -6,24 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ariel Silva</title>
     <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/stack.css">
 </head>
 <body>
-    <section id="transition-shadow" class="transitionEnd"></section>
+    <section id="transition-shadow" class="transitionHorizontalEnd"></section>
 
     <section id="navbar-desk">
         <div class="navbar-img" onclick="changePage('index', false)">
             <img src="./assets/media/icon3.png">
         </div>
         <div class="navbar-options">
-            <a onclick="changePage('about', false)">
+            <a class="active" onclick="changePage('about', false)">
                 <div>
                     <translatable variable="navbar.about_me" title="Sobre mi">Sobre mi</translatable>
-                </div>
-            </a>
-            <a class="active">
-                <div>
-                    <translatable variable="navbar.mystack" title="Mi Stack">Mi Stack</translatable>
                 </div>
             </a>
             <a onclick="changePage('projects', false)">
@@ -39,9 +34,12 @@
         </div>
     </section>
     
-    <span style="font-family: 'Aeroport Mono'; color: var(--colors-light-2);">SOON MI STACK</span>
+    <stack id="mainComponent">
+        <span style="font-family: 'Aeroport Mono'; color: var(--colors-light-2);">SOON MI STACK</span>
+    </stack>
     
     <script src="./scripts/translation.js"></script>
     <script src="./scripts/global.js"></script>
+    <script src="./scripts/about.js"></script>
 </body>
 </html>

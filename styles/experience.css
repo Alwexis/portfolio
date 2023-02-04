@@ -39,6 +39,20 @@ body {
     color: var(--colors-light-6);
     text-align: center;
   }
+  experience .experience-title .toAchievements {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--colors-light);
+    -webkit-animation-name: intermitente;
+            animation-name: intermitente;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
   experience .swiper {
     overflow: hidden;
     width: 60%;
@@ -69,8 +83,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 40%;
-    max-width: 40%;
+    min-width: 30%;
+    max-width: 30%;
     height: 100%;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image::after {
@@ -80,8 +94,8 @@ body {
     padding: 0vh 1.5vh;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image {
-    width: 80%;
-    max-width: 80%;
+    width: 60%;
+    max-width: 60%;
     border-radius: 2vh;
     border: 2px solid var(--colors-light-6);
   }
@@ -241,6 +255,22 @@ body {
     text-align: center;
     font-size: 1.8vh;
   }
+  experience .experience-title .toAchievements {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: var(--colors-light);
+    font-size: 1.6vh;
+    -webkit-animation-name: intermitente;
+            animation-name: intermitente;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
   experience .swiper {
     overflow: hidden;
     width: 80%;
@@ -394,5 +424,27 @@ body {
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-text::-webkit-scrollbar-thumb {
     background: var(--colors-light-4);
     border-radius: 2vh;
+  }
+}
+@-webkit-keyframes intermitente {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes intermitente {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }/*# sourceMappingURL=experience.css.map */
