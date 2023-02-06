@@ -28,6 +28,12 @@ const __TRANSLATIONS__ = {
           "company": "DuocUC",
           "jobtitle": "Profesor de Ayudantías en Python",
           "description": "Trabajé durante unos meses como profesor de clases de ayudantía en la asignatura de programación de Algoritmos y Estructuras de Datos en Python, en la cual enseñé a los alumnos las bases de la programación, tanto su estructura como su lógica, y también las bases de Python.",
+          "activities": [
+            "Enseñé las bases de la programación.",
+            "Enseñé Python para la resolución de problemas.",
+            "Enseñé a los alumnos a utilizar librerías (Numpy).",
+            "Enseñé a los alumnos a utilizar Visual Studio Code.",
+          ],
           "skills": "Habilidades Empleadas",
           "skills_list": [
             "Python",
@@ -87,7 +93,7 @@ const __TRANSLATIONS__ = {
         {
           "date": "Ener. 2023 - Present",
           "company": "CETECOM",
-          "jobtitle": "General Maintenance of Technological Equipment",
+          "jobtitle": "Technical Service",
           "description": "I am currently doing my 'work practice' at CETECOM. I work as a technical maintenance of technological equipment, in which I am responsible for maintaining the company's equipment, both hardware and software, as well as providing customer service either in person or by phone.",
           "skills": "Empleated Skills",
           "skills_list": [

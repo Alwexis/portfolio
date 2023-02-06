@@ -46,6 +46,44 @@
     </section>
 
     <experience id="mainComponent">
+
+        <section class="experience-body">
+            <translatable class="title" variable="experience.title"></translatable>
+            <div class="experience-container">
+                <div class="experience-options">
+                    <div class="experience-option active" experienceId="1">
+                        <span>DuocUC</span>
+                    </div>
+                    <div class="experience-option" experienceId="2">
+                        <span>CETECOM</span>
+                    </div>
+                </div>
+                <div class="experience-text">
+                    <div class="experience-text-header">
+                        <div class="header-title">
+                            <translatable class="header-jobtitle" [onload]="false" variable=""></translatable>
+                            <a class="header-company" href="" target="_blank">
+                                <translatable [onload]="false" variable=""></translatable>
+                                <i class="bi bi-link"></i>
+                            </a>
+                        </div>
+                        <div class="header-subtitle">
+                            <translatable class="header-date" [onload]="false" variable=""></translatable>
+                        </div>
+                    </div>
+                    <div class="experience-text-content">
+                        <translatable class="content-description"></translatable>
+                        <div class="content-activities"></div>
+                    </div>
+                    <div class="experience-text-footer"></div>
+                    <!--
+                        <i class="bi bi-link"></i>
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!--
         <div class="experience-title">
             <translatable class="title" variable="experience.title">
             </translatable>
@@ -136,6 +174,7 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
+        -->
     </experience>
 
     <achievements id="achievementsComponent">

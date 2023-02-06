@@ -1,3 +1,45 @@
+let __ACTUAL_EXP__ = 1;
+const __EXPERIENCES__ = {
+    1: {
+        id: 0,
+        title: 'experience.experiences.0.jobtitle',
+        company: 'experience.experiences.0.company',
+        date: 'experience.experiences.0.date',
+        description: 'experience.experiences.0.description',
+        activities: 'experience.experiences.0.activities',
+        skills: 'experience.experiences.0.skills',
+        skills_list: 'experience.experiences.0.skills_list',
+        link: 'https://www.duoc.cl',
+    },
+}
+
+window.addEventListener('load', () => {
+    const jobTitle = document.querySelector('.experience-text .experience-text-header .header-jobtitle');
+    jobTitle.setAttribute('variable', __EXPERIENCES__[__ACTUAL_EXP__].title);
+    const company = document.querySelector('.experience-text .experience-text-header .header-company');
+    company.setAttribute('href', __EXPERIENCES__[__ACTUAL_EXP__].link);
+    company.querySelector('translatable').setAttribute('variable', __EXPERIENCES__[__ACTUAL_EXP__].company);
+    const date = document.querySelector('.experience-text .experience-text-header .header-date');
+    date.setAttribute('variable', __EXPERIENCES__[__ACTUAL_EXP__].date);
+    const description = document.querySelector('.experience-text .experience-text-content .content-description');
+    description.setAttribute('variable', __EXPERIENCES__[__ACTUAL_EXP__].description);
+    const activities = document.querySelector('.experience-text .experience-text-content .content-activities');
+    let activitiesList = __TRANSLATIONS__[__LANGUAGE__].experience.experiences[__EXPERIENCES__[__ACTUAL_EXP__].id].activities;
+    activitiesList.forEach((activity, index) => {
+        let activityContainer = document.createElement('div');
+        activityContainer.classList.add('content-activity');
+        let activityIcon = document.createElement('i');
+        activityIcon.classList.add('bi', 'bi-caret-right-fill');
+        let activityText = document.createElement('translatable');
+        activityText.setAttribute('variable', `experience.experiences.${__EXPERIENCES__[__ACTUAL_EXP__].id}.activities.${index}`);
+        activityContainer.appendChild(activityIcon);
+        activityContainer.appendChild(activityText);
+        activities.appendChild(activityContainer);
+    });
+    translatePage(false);
+});
+
+/*
 const swiper = new Swiper('.swiper', {
     effect: 'creative',
     creativeEffect: {
@@ -18,7 +60,7 @@ const swiper = new Swiper('.swiper', {
         delay: 5000,
     },
 });
-
+*/
 
 //* Slide
 let __ACTUAL_SLIDE__ = 0;
