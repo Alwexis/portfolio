@@ -7,13 +7,20 @@
     <title>Ariel Silva</title>
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/about.css">
+    <link rel="icon" href="assets/media/icon.ico">
 </head>
 <body>
     <section id="transition-shadow" class="transitionEnd"></section>
-
+    <section id="pagination">
+        <div onclick="changePage('index', false)"></div>
+        <div onclick="changePage('about', false)"></div>
+        <div class="active"></div>
+        <div onclick="changePage('experience', false)"></div>
+    </section>
+    
     <section id="navbar-desk">
         <div class="navbar-img" onclick="changePage('index', false)">
-            <img src="./assets/media/icon3.png">
+            <img src="./assets/media/icon.png">
         </div>
         <div class="navbar-options">
             <a onclick="changePage('about', false)">

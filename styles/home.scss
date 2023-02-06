@@ -1,0 +1,220 @@
+@import url('./global.css');
+
+* {
+    user-select: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    background-image: url("../assets/media/background.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#background-shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 0;
+}
+
+.scroll-down {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    color: var(--colors-light-4);
+    font-family: "vcr mono";
+    animation-name: intermitent;
+    animation-duration: 1.75s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin: 2vh 0vh;
+}
+
+@media (min-width: 950px) {
+    .scroll-down * {
+        margin: 0vh 0.75vh;
+        font-size: 1.85vh;
+        opacity: 0.6;
+    }
+
+    #welcome-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--colors-light-2);
+        font-family: 'Aeroport Mono';
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+        padding: 2vh 6vh;
+
+        & #welcome-title {
+            font-size: 7.5vh;
+            margin-bottom: 0;
+        }
+
+        & #social-media {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            margin: 1.5vh 0vh;
+
+            & .social-media-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: var(--colors-light-4);
+                transition: all .5s;
+                cursor: pointer;
+
+                & i {
+                    color: var(--colors-dark-2);
+                    font-size: 3vh;
+                    transition: all 0.5s;
+                }
+
+                &:hover {
+                    transform: rotate(0deg) skew(0deg) translate(0, -5px);
+                    transition: all 0.5s;
+
+                    &:first-child {
+                        background-color: #55acee;
+                    }
+
+                    &:nth-child(2) {
+                        //background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+                        background: radial-gradient(circle farthest-corner at 28% 100%,
+                                #fcdf8f 0%,
+                                #fbd377 10%,
+                                #fa8e37 22%,
+                                #f73344 35%,
+                                transparent 65%), linear-gradient(145deg, #3051f1 10%, #c92bb7 70%);
+                    }
+
+                    &:nth-child(3) {
+                        background-color: #7289d9;
+                    }
+
+                    &:nth-child(4) {
+                        background-color: #414141;
+                    }
+
+                    &:nth-child(5) {
+                        background-color: #007bb5;
+                    }
+
+                    &:last-child {
+                        background-color: #c71610;
+                    }
+
+                    & * {
+                        color: var(--colors-light-4);
+                    }
+                }
+            }
+        }
+
+        & #who-am-i-txt::after {
+            content: '';
+            border-right: 1px solid var(--colors-light-2);
+            margin-left: 0.5vh;
+            animation-name: intermitent;
+            animation-duration: 0.75s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    body {
+        background-position: 40%;
+    }
+
+    .scroll-down * {
+        margin: 0vh 0.5vh;
+        font-size: 1.85vh;
+        opacity: 0.6;
+    }
+
+    #welcome-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--colors-light-2);
+        font-family: 'Aeroport Mono';
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+        padding: 2vh 6vh;
+
+        & #welcome-title {
+            font-size: 4.5vh;
+        }
+
+        & #social-media {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 1.5vh 0vh;
+
+            & .social-media-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: var(--colors-light-4);
+                transition: all .5s;
+
+                & i {
+                    color: var(--colors-dark-2);
+                    font-size: 3vh;
+                    transition: all 0.5s;
+                }
+            }
+        }
+
+        & #who-am-i-txt::after {
+            content: '';
+            border-right: 1px solid var(--colors-light-2);
+            margin-left: 0.5vh;
+            animation-name: intermitent;
+            animation-duration: 0.75s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    }
+}
+
+/* Animations */
+@keyframes intermitent {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

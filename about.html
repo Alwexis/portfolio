@@ -9,14 +9,21 @@
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/stack.css">
+    <link rel="icon" href="assets/media/icon.ico">
 </head>
 
 <body>
     <section id="transition-shadow" class="transitionEnd"></section>
+    <section id="pagination">
+        <div onclick="changePage('index', false)"></div>
+        <div class="active"></div>
+        <div onclick="changePage('projects', false)"></div>
+        <div onclick="changePage('experience', false)"></div>
+    </section>
 
     <section id="navbar-desk">
         <div onclick="changePage('index', false)" class="navbar-img">
-            <img src="./assets/media/icon3.png">
+            <img src="./assets/media/icon.png">
         </div>
         <div class="navbar-options">
             <a class="active">

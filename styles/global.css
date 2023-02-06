@@ -54,7 +54,7 @@ body {
 
 /* Navbar */
 @media (min-width: 950px) {
-  #navbar-mobile {
+  #pagination {
     display: none;
   }
   #navbar-desk {
@@ -502,4 +502,29 @@ translatable.beingTranslated {
 [data-tooltip]:hover:after {
   visibility: visible;
   opacity: 1;
+}
+
+@media (max-width: 950px) {
+  #pagination {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    right: 0;
+    margin: 1vh;
+  }
+  #pagination div {
+    width: 1.5vh;
+    height: 1.5vh;
+    margin: 0.5vh 0vh;
+  }
+  #pagination div:not(.active) {
+    background-color: var(--colors-dark-4);
+  }
+  #pagination div.active {
+    background-color: var(--colors-indigo);
+    width: 1.75vh;
+    height: 1.75vh;
+  }
 }/*# sourceMappingURL=global.css.map */

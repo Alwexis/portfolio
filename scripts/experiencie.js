@@ -19,58 +19,117 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-const __MAIN_COMPONENT__ = document.querySelector('experience');
 
-//* Desktop
-__MAIN_COMPONENT__.addEventListener('mousedown', (e) => {
-    if (e.target.classList.toString().includes('swiper', 'slider')) return;
-    __MAIN_COMPONENT__.setAttribute('ExperiencefirstYClickLocation', e.clientX)
-})
+//* Slide
+let __ACTUAL_SLIDE__ = 0;
+let __CHANGING_SLIDE__ = false;
+if (__BODY__) {
+    //* Desktop
+    __BODY__.addEventListener('mousedown', (e) => {
+        __BODY__.setAttribute('firstXClickLocation', e.clientX)
+    })
 
-__MAIN_COMPONENT__.addEventListener('mouseup', (e) => {
-    if (__CHANGING_PAGE__) return;
-    const firstYClickLocation = Math.round(__MAIN_COMPONENT__.getAttribute('ExperiencefirstYClickLocation'));
-    const currentYClickLocation = Math.round(e.clientX);
-    /*
-    * If the click first location is greater than the last one, that means that the user is going up,
-    * otherwise, the user is going down. 
-    */
-    if (Math.abs(firstYClickLocation - currentYClickLocation) > 200) {
-        if (firstYClickLocation > currentYClickLocation) {
-            console.log('next');
-        } else {
-            console.log('prev');
+    __BODY__.addEventListener('mouseup', (e) => {
+        if (__CHANGING_PAGE__ || __CHANGING_SLIDE__) return;
+        const firstXClickLocation = Math.round(__BODY__.getAttribute('firstXClickLocation'));
+        const currentXClickLocation = Math.round(e.clientX);
+        if (Math.abs(firstXClickLocation - currentXClickLocation) > 200) {
+            if (firstXClickLocation > currentXClickLocation) {
+                if (__ACTUAL_SLIDE__ === 0) {
+                    __CHANGING_SLIDE__ = true;
+                    __ACTUAL_SLIDE__ = 1;
+                    __TRANSITION_SHADOW__.classList.add('slideTransition');
+                    setTimeout(() => {
+                        document.querySelector('experience').style.display = 'none';
+                        document.querySelector('achievements').style.display = 'flex';
+                    }, 600)
+                    __BODY__.addEventListener('animationend', (e) => {
+                        if (e.animationName === 'slideTransition') {
+                            if (__TRANSITION_SHADOW__.classList.contains('slideTransition')) {
+                                __TRANSITION_SHADOW__.classList.remove('slideTransition');
+                                __CHANGING_SLIDE__ = false;
+                            }
+                        }
+                    })
+                }
+            } else {
+                if (__ACTUAL_SLIDE__ === 1) {
+                    __CHANGING_SLIDE__ = true;
+                    __ACTUAL_SLIDE__ = 0;
+                    __TRANSITION_SHADOW__.classList.add('slideTransitionBack');
+                    setTimeout(() => {
+                        document.querySelector('experience').style.display = 'flex';
+                        document.querySelector('achievements').style.display = 'none';
+                    }, 600)
+                    __BODY__.addEventListener('animationend', (e) => {
+                        if (e.animationName === 'slideTransition') {
+                            if (__TRANSITION_SHADOW__.classList.contains('slideTransitionBack')) {
+                                __TRANSITION_SHADOW__.classList.remove('slideTransitionBack');
+                                __CHANGING_SLIDE__ = false;
+                            }
+                        }
+                    })
+                }
+            }
         }
-    }
-    __MAIN_COMPONENT__.setAttribute('ExperiencefirstYClickLocation', 0);
-});
+        __BODY__.setAttribute('firstXClickLocation', 0);
+    });
 
-//* Mobile
-__MAIN_COMPONENT__.addEventListener('touchstart', (e) => {
-    if (e.target.classList.toString().includes('swiper', 'slider')) return;
-    __MAIN_COMPONENT__.setAttribute('ExperiencefirstYTouchLocation', e.touches[0].clientX)
-    __MAIN_COMPONENT__.setAttribute('ExperiencefirstTouchLocationTimestamp', Math.round(e.timeStamp))
-});
+    //* Mobile
+    __BODY__.addEventListener('touchstart', (e) => {
+        __BODY__.setAttribute('firstXTouchLocation', e.touches[0].clientX)
+        __BODY__.setAttribute('firstXTouchTime', Math.round(e.timeStamp))
+    });
 
-__MAIN_COMPONENT__.addEventListener('touchend', (e) => {
-    if (__CHANGING_PAGE__) return;
-    const firstTouchLocationTimestamp = Math.round(__MAIN_COMPONENT__.getAttribute('ExperiencefirstTouchLocationTimestamp'));
-    const currentTouchLocationTimestamp = Math.round(e.timeStamp);
-    const differenceBetweenTimestamps = Math.abs(firstTouchLocationTimestamp - currentTouchLocationTimestamp);
-    if (differenceBetweenTimestamps < 50 || differenceBetweenTimestamps > 400) return;
+    __BODY__.addEventListener('touchend', (e) => {
+        if (__CHANGING_PAGE__ || __CHANGING_SLIDE__ || __SCROLLING__) return;
+        const firstTouchLocationTimestamp = Math.round(__BODY__.getAttribute('firstXTouchTime'));
+        const currentTouchLocationTimestamp = Math.round(e.timeStamp);
+        const differenceBetweenTimestamps = Math.abs(firstTouchLocationTimestamp - currentTouchLocationTimestamp);
+        if (differenceBetweenTimestamps < 50 || differenceBetweenTimestamps > 400) return;
 
-    const firstYTouchLocation = Math.round(__MAIN_COMPONENT__.getAttribute('ExperiencefirstYTouchLocation'));
-    const currentYTouchLocation = Math.round(e.changedTouches[0].clientX);
-    /*
-    * If the touch first location is greater than the last one, that means that the user is going up,
-    * otherwise, the user is going down. 
-    */
-    if (Math.abs(firstYTouchLocation - currentYTouchLocation) > 150) {
-        if (firstYTouchLocation > currentYTouchLocation) {
-            console.log('next');
-        } else {
-            console.log('prev');
+        let firstXTouchLocation = Math.round(__BODY__.getAttribute('firstXTouchLocation'));
+        let currentXTouchLocation = Math.round(e.changedTouches[0].clientX);
+        if (Math.abs(firstXTouchLocation - currentXTouchLocation) > 100) {
+            if (firstXTouchLocation > currentXTouchLocation && !__CHANGING_SLIDE__) {
+                if (__ACTUAL_SLIDE__ === 0) {
+                    __CHANGING_SLIDE__ = true;
+                    __ACTUAL_SLIDE__ = 1;
+                    __TRANSITION_SHADOW__.classList.add('slideTransition');
+                    setTimeout(() => {
+                        document.querySelector('experience').style.display = 'none';
+                        document.querySelector('achievements').style.display = 'flex';
+                    }, 600)
+                    __BODY__.addEventListener('animationend', (e) => {
+                        if (e.animationName === 'slideTransition') {
+                            if (__TRANSITION_SHADOW__.classList.contains('slideTransition')) {
+                                __TRANSITION_SHADOW__.classList.remove('slideTransition');
+                                __CHANGING_SLIDE__ = false;
+                            }
+                        }
+                    })
+                }
+            } else if (firstXTouchLocation < currentXTouchLocation && !__CHANGING_SLIDE__) {
+                if (__ACTUAL_SLIDE__ === 1) {
+                    __CHANGING_SLIDE__ = true;
+                    __ACTUAL_SLIDE__ = 0;
+                    __TRANSITION_SHADOW__.classList.add('slideTransitionBack');
+                    setTimeout(() => {
+                        document.querySelector('experience').style.display = 'flex';
+                        document.querySelector('achievements').style.display = 'none';
+                    }, 600)
+                    __BODY__.addEventListener('animationend', (e) => {
+                        if (e.animationName === 'slideTransition') {
+                            if (__TRANSITION_SHADOW__.classList.contains('slideTransitionBack')) {
+                                __TRANSITION_SHADOW__.classList.remove('slideTransitionBack');
+                                __CHANGING_SLIDE__ = false;
+                            }
+                        }
+                    })
+                }
+            }
         }
-    }
-    __MAIN_COMPONENT__.setAttribute('ExperiencefirstYTouchLocation', 0);
-});
+        firstXTouchLocation = 0;
+        currentXTouchLocation = 0;
+    });
+}

@@ -61,6 +61,7 @@ body {
   }
   experience .swiper .swiper-wrapper {
     z-index: 1;
+    height: 85%;
   }
   experience .swiper .swiper-wrapper :nth-child(even):is(.slider-item) {
     background-color: var(--colors-dark-2);
@@ -86,12 +87,15 @@ body {
     min-width: 30%;
     max-width: 30%;
     height: 100%;
+    flex-direction: column;
+    position: relative;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image::after {
+    position: absolute;
     content: "";
     border-right: 2px solid var(--colors-light-6);
     height: 60%;
-    padding: 0vh 1.5vh;
+    right: 0;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image {
     width: 60%;
@@ -99,51 +103,63 @@ body {
     border-radius: 2vh;
     border: 2px solid var(--colors-light-6);
   }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Helvetica";
+    margin: 1.5vh 0vh;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-date {
+    font-size: 2vh;
+    font-weight: 100;
+    text-align: center;
+    color: var(--colors-light-6);
+    margin: 0;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh 0vh;
+    font-size: 3.6vh;
+    font-weight: 800;
+    text-align: center;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-title::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid var(--colors-light-6);
+    padding-top: 0.5vh;
+    width: 30%;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-title::before {
+    content: "";
+    display: block;
+    border-top: 1px solid var(--colors-light-6);
+    padding-bottom: 0.5vh;
+    width: 60%;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-subtitle {
+    font-size: 2.2vh;
+    font-weight: 100;
+    text-align: center;
+    color: var(--colors-light-6);
+    margin: 0;
+    max-width: 95%;
+  }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header {
-    font-family: "Helvetica";
-    margin: 0.5vh 0vh;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-date {
-    font-size: 2vh;
-    font-weight: 100;
-    color: var(--colors-light-6);
-    margin: 0;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-title {
-    margin: 1.25vh 0vh;
-    font-size: 3.6vh;
-    font-weight: 800;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-title::after {
-    content: "";
-    display: block;
-    border-bottom: 1px solid var(--colors-light-6);
-    padding-bottom: 0.5vh;
-    width: 15%;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-title::before {
-    content: "";
-    display: block;
-    border-top: 1px solid var(--colors-light-6);
-    padding-top: 0.5vh;
-    width: 20%;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-subtitle {
-    font-size: 2.2vh;
-    font-weight: 100;
-    color: var(--colors-light-6);
-    margin: 0;
+    margin-left: 2.5vh;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-footer {
     display: flex;
     flex-direction: column;
     max-height: 20%;
+    min-height: 20%;
     padding-bottom: 1vh;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-footer .slider-item-content-footer-title {
@@ -191,7 +207,7 @@ body {
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-text {
     overflow: auto;
-    max-height: 70%;
+    max-height: 80%;
     color: var(--colors-light-4);
     margin: 1vh 0vh;
     /* padding: 1vh 1vh 1vh 0vh; */
@@ -202,14 +218,14 @@ body {
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-text::after {
     content: "";
     display: block;
-    border-bottom: 1px groove var(--colors-light-5);
+    border-bottom: 1px solid var(--colors-light-5);
     padding-top: 1vh;
     width: 10%;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-text::before {
     content: "";
     display: block;
-    border-top: 1px groove var(--colors-light-5);
+    border-top: 1px solid var(--colors-light-5);
     padding-bottom: 1vh;
     width: 15%;
   }
@@ -274,7 +290,7 @@ body {
   experience .swiper {
     overflow: hidden;
     width: 80%;
-    height: 65%;
+    height: 60%;
     margin: 1vh 0vh;
   }
   experience .swiper .swiper-wrapper {
@@ -301,65 +317,66 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    min-width: 40%;
-    max-width: 40%;
-    height: 100%;
+    /* min-width: 40%; */
+    /* max-width: 40%; */
+    min-width: 100%;
+    width: 100%;
+    height: 40%;
     padding-top: 1vh;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image {
-    width: 80%;
-    max-width: 80%;
+    width: 40%;
+    max-width: 40%;
     border-radius: 2vh;
     border: 2px solid var(--colors-light-6);
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header {
+    font-family: "Helvetica";
+    /* margin: 1vh 0vh 0.5vh 0vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2vh;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-date {
+    font-size: 1.6vh;
+    font-weight: 100;
+    color: var(--colors-light-6);
+    margin: 0;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-title {
+    margin: 1vh 0vh;
+    font-size: 2.6vh;
+    font-weight: 800;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-title::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid var(--colors-light-6);
+    padding-bottom: 0.5vh;
+    width: 30%;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-title::before {
+    content: "";
+    display: block;
+    border-top: 1px solid var(--colors-light-6);
+    padding-top: 0.5vh;
+    width: 60%;
+  }
+  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-image .slider-image-content-header .slider-item-content-subtitle {
+    font-size: 1.6vh;
+    font-weight: 100;
+    color: var(--colors-light-6);
+    margin: 0;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header {
-    font-family: "Helvetica";
-    margin: 1vh 0vh 0.5vh 0vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-date {
-    font-size: 1.6vh;
-    font-weight: 100;
-    color: var(--colors-light-6);
-    margin: 0;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-title {
-    margin: 1vh 0vh;
-    font-size: 3vh;
-    font-weight: 800;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-title::after {
-    content: "";
-    display: block;
-    border-bottom: 1px solid var(--colors-light-6);
-    padding-bottom: 0.5vh;
-    width: 15%;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-title::before {
-    content: "";
-    display: block;
-    border-top: 1px solid var(--colors-light-6);
-    padding-top: 0.5vh;
-    width: 20%;
-  }
-  experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-header .slider-item-content-subtitle {
-    font-size: 1.6vh;
-    font-weight: 100;
-    color: var(--colors-light-6);
-    margin: 0;
-  }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-footer {
     display: flex;
     flex-direction: column;
-    max-height: 20%;
-    padding-bottom: 1vh;
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-footer .slider-item-content-footer-title {
     margin: 1vh 0vh;
@@ -406,7 +423,7 @@ body {
   }
   experience .swiper .swiper-wrapper .slider-item .swiper-item-content .slider-item-content .slider-item-content-text {
     overflow: auto;
-    max-height: 45%;
+    max-height: 80%;
     color: var(--colors-light-4);
     margin: 1vh 0vh;
     /* padding: 1vh 1vh 1vh 0vh; */

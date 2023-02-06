@@ -1,0 +1,294 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--colors-dark);
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 950px) {
+    about-me {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        position: relative;
+        & .about-me-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            max-width: 30%;
+            height: 100%;
+
+            & img {
+                width: 32vh;
+                height: 32vh;
+                border-radius: 2vh;
+                transform: rotateY(180deg);
+            }
+
+            & .about-me-border {
+                background: linear-gradient(to right, var(--colors-light-2) 4px, transparent 4px) 0 0, linear-gradient(to right, var(--colors-light-2) 4px, transparent 4px) 0 100%, linear-gradient(to left, var(--colors-light-2) 4px, transparent 4px) 100% 0, linear-gradient(to left, var(--colors-light-2) 4px, transparent 4px) 100% 100%, linear-gradient(to bottom, var(--colors-light-2) 4px, transparent 4px) 0 0, linear-gradient(to bottom, var(--colors-light-2) 4px, transparent 4px) 100% 0, linear-gradient(to top, var(--colors-light-2) 4px, transparent 4px) 0 100%, linear-gradient(to top, var(--colors-light-2) 4px, transparent 4px) 100% 100%;
+                background-repeat: no-repeat;
+                background-size: 20px 20px;
+                width: 40vh;
+                height: 40vh;
+                position: absolute;
+                z-index: 0;
+                animation-name: borderRotation;
+                animation-duration: 4.5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+
+        & .about-me-text {
+            width: -webkit-fill-available;
+            max-width: 60%;
+            font-family: 'Aeroport Mono';
+            & h1 {
+                color: var(--colors-light);
+                margin: 0;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 20%;
+                    height: 1px;
+                    background-color: var(--colors-light-6);
+                    margin: 1vh 0vh;
+                }
+            }
+            & translatable {
+                color: var(--colors-light-6);
+                transform: translateY(40%);
+                opacity: 0;
+                animation-name: textAppear;
+                animation-iteration-count: 1;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-in-out;
+                animation-delay: 0.25s;
+                &.first {
+                    margin-top: 0vh;
+                }
+                &.last {
+                    margin-bottom: 2vh;
+                }
+            }
+
+            & .toStack {
+                display: flex;
+                align-items: center;
+                position: relative;
+                bottom: -6vh;
+                color: var(--colors-light);
+                animation-name: intermitente;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+    }
+    @keyframes borderRotation {
+        0% {
+            transform: rotate(0deg);
+            width: 40vh;
+            height: 40vh;
+            border-radius: 0vh;
+        }
+    
+        10%,
+        20% {
+            transform: rotate(45deg);
+            width: 28vh;
+            height: 28vh;
+            border-radius: 1vh;
+        }
+    
+        30%,
+        40% {
+            transform: rotate(180deg);
+            width: 40vh;
+            height: 40vh;
+            border-radius: 0vh;
+        }
+    
+        50%,
+        60% {
+            transform: rotate(225deg);
+            width: 28vh;
+            height: 28vh;
+            border-radius: 1vh;
+        }
+    
+        70%,
+        100% {
+            transform: rotate(360deg);
+            width: 40vh;
+            height: 40vh;
+            border-radius: 0vh;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    about-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+        padding-bottom: 6vh;
+        & .about-me-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 90%;
+            margin: 6vh 0vh;
+            position: relative;
+            & img {
+                width: 20vh;
+                height: 20vh;
+                border-radius: 2vh;
+                transform: rotateY(180deg);
+            }
+
+            & .about-me-border {
+                background: linear-gradient(to right, var(--colors-light-2) 4px, transparent 4px) 0 0, linear-gradient(to right, var(--colors-light-2) 4px, transparent 4px) 0 100%, linear-gradient(to left, var(--colors-light-2) 4px, transparent 4px) 100% 0, linear-gradient(to left, var(--colors-light-2) 4px, transparent 4px) 100% 100%, linear-gradient(to bottom, var(--colors-light-2) 4px, transparent 4px) 0 0, linear-gradient(to bottom, var(--colors-light-2) 4px, transparent 4px) 100% 0, linear-gradient(to top, var(--colors-light-2) 4px, transparent 4px) 0 100%, linear-gradient(to top, var(--colors-light-2) 4px, transparent 4px) 100% 100%;
+                background-repeat: no-repeat;
+                background-size: 20px 20px;
+                width: 26vh;
+                height: 26vh;
+                position: absolute;
+                z-index: 0;
+                animation-name: borderRotation;
+                animation-duration: 4.5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+
+        & .about-me-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: -webkit-fill-available;
+            max-width: 90%;
+            font-family: "Aeroport Mono";
+            & h1 {
+                color: var(--colors-light);
+                margin: 0;
+                font-size: 3vh;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 20%;
+                    height: 1px;
+                    background-color: var(--colors-light-6);
+                    margin: 1vh 0vh;
+                }
+            }
+            & translatable {
+                color: var(--colors-light-6);
+                font-size: 1.8vh;
+                margin: 1vh 0vh;
+                transform: translateY(40%);
+                opacity: 0;
+                animation-name: textAppear;
+                animation-iteration-count: 1;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-in-out;
+                animation-delay: 0.25s;
+                &.first {
+                    margin-top: 0vh;
+                }
+                &.last {
+                    margin-bottom: 0vh;
+                }
+            }
+            & .toStack {
+                display: flex;
+                align-items: center;
+                position: relative;
+                bottom: -5vh;
+                font-size: 1.8vh;
+                color: var(--colors-light);
+                animation-name: intermitente;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+    }
+
+    @keyframes borderRotation {
+        0% {
+            transform: rotate(0deg);
+            width: 26vh;
+            height: 26vh;
+            border-radius: 0vh;
+        }
+    
+        10%,
+        20% {
+            transform: rotate(45deg);
+            width: 18vh;
+            height: 18vh;
+            border-radius: 1vh;
+        }
+    
+        30%,
+        40% {
+            transform: rotate(180deg);
+            width: 26vh;
+            height: 26vh;
+            border-radius: 0vh;
+        }
+    
+        50%,
+        60% {
+            transform: rotate(225deg);
+            width: 18vh;
+            height: 18vh;
+            border-radius: 1vh;
+        }
+    
+        70%,
+        100% {
+            transform: rotate(360deg);
+            width: 26vh;
+            height: 26vh;
+            border-radius: 0vh;
+        }
+    }
+}
+
+@keyframes intermitente {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes textAppear {
+    from {
+        transform: translateY(40%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
