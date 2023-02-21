@@ -30,8 +30,8 @@ function writingAnimationHandler() {
 
 writingAnimationHandler();
 
-__BODY__.addEventListener('animationend', (e) => {
-    if (e.animationName === 'changePageTransition') {
-        if (__PAGE__ === __PAGES__[__ACTUAL_PAGE__]) __TRANSITION_SHADOW__.classList.remove('transitionEnd');
-    }
-});
+//__BODY__.addEventListener('animationend', (e) => {
+//    if (e.animationName === 'changePageTransition') {
+//        if (__PAGE__ === __PAGES__[__ACTUAL_PAGE__]) __TRANSITION_SHADOW__.classList.remove('transitionEnd');
+//    }
+//});

@@ -31,14 +31,10 @@
     height: 40vh;
     position: absolute;
     z-index: 0;
-    -webkit-animation-name: borderRotation;
-            animation-name: borderRotation;
-    -webkit-animation-duration: 4.5s;
-            animation-duration: 4.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-name: borderRotation;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   stack .my-stack-content {
     width: -webkit-fill-available;
@@ -69,18 +65,12 @@
     flex-direction: column;
     transform: translateY(40%);
     opacity: 0;
-    -webkit-animation-name: textAppear;
-            animation-name: textAppear;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    -webkit-animation-delay: 0.25s;
-            animation-delay: 0.25s;
+    animation-name: textAppear;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.25s;
   }
   stack .my-stack-content .my-stack-container .my-stack-wrapper:not(:first-child):not(:last-child) {
     margin: 0.5vh 0vh;
@@ -109,18 +99,12 @@
     transform: translateY(40%);
     opacity: 0;
     position: relative;
-    -webkit-animation-name: stackAppears;
-            animation-name: stackAppears;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    -webkit-animation-delay: 0.25s;
-            animation-delay: 0.25s;
+    animation-name: stackAppears;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.25s;
   }
   stack .my-stack-content .my-stack-container .my-stack-wrapper section .my-stack-wrapper-stack:not(:first-child):not(:last-child) {
     margin: 0vh 2vh;
@@ -156,14 +140,10 @@
     position: relative;
     bottom: -2vh;
     color: var(--colors-light);
-    -webkit-animation-name: intermitente;
-            animation-name: intermitente;
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-name: intermitente;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 }
 @media (max-width: 950px) {
@@ -200,14 +180,10 @@
     height: 26vh;
     position: absolute;
     z-index: 0;
-    -webkit-animation-name: borderRotation;
-            animation-name: borderRotation;
-    -webkit-animation-duration: 4.5s;
-            animation-duration: 4.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-name: borderRotation;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   stack .my-stack-content {
     width: -webkit-fill-available;
@@ -238,18 +214,12 @@
     flex-direction: column;
     transform: translateY(40%);
     opacity: 0;
-    -webkit-animation-name: textAppear;
-            animation-name: textAppear;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    -webkit-animation-delay: 0.25s;
-            animation-delay: 0.25s;
+    animation-name: textAppear;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.25s;
   }
   stack .my-stack-content .my-stack-container .my-stack-wrapper:not(:first-child):not(:last-child) {
     margin: 0.75vh 0vh;
@@ -325,24 +295,10 @@
     bottom: -6px;
     color: var(--colors-light);
     font-size: 1.8vh;
-    -webkit-animation-name: intermitente;
-            animation-name: intermitente;
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-  }
-}
-@-webkit-keyframes stackAppears {
-  from {
-    transform: translateY(40%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
+    animation-name: intermitente;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 }
 @keyframes stackAppears {

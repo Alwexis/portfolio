@@ -43,13 +43,11 @@
 * {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
 body {
-  -ms-scroll-chaining: none;
-      overscroll-behavior: none;
+  overscroll-behavior: none;
 }
 
 /* Navbar */
@@ -130,8 +128,7 @@ body {
   }
   #navbar-desk a:hover translatable, #navbar-desk a.active div translatable, #navbar-desk .navbar-img:hover translatable, #navbar-desk .navbar-img.active div translatable, #navbar-desk a.active:hover translatable, #navbar-desk a.active.active div translatable, #navbar-desk .navbar-img.active:hover translatable, #navbar-desk .navbar-img.active.active div translatable {
     color: var(--colors-dark-2);
-    -webkit-animation: glitch 1s linear infinite;
-            animation: glitch 1s linear infinite;
+    animation: glitch 1s linear infinite;
   }
   #navbar-desk a:hover translatable::after, #navbar-desk a:hover translatable::before, #navbar-desk a.active div translatable::after, #navbar-desk a.active div translatable::before, #navbar-desk .navbar-img:hover translatable::after, #navbar-desk .navbar-img:hover translatable::before, #navbar-desk .navbar-img.active div translatable::after, #navbar-desk .navbar-img.active div translatable::before, #navbar-desk a.active:hover translatable::after, #navbar-desk a.active:hover translatable::before, #navbar-desk a.active.active div translatable::after, #navbar-desk a.active.active div translatable::before, #navbar-desk .navbar-img.active:hover translatable::after, #navbar-desk .navbar-img.active:hover translatable::before, #navbar-desk .navbar-img.active.active div translatable::after, #navbar-desk .navbar-img.active.active div translatable::before {
     content: attr(title);
@@ -139,14 +136,12 @@ body {
     left: 0;
   }
   #navbar-desk a:hover translatable::before, #navbar-desk a.active div translatable::before, #navbar-desk .navbar-img:hover translatable::before, #navbar-desk .navbar-img.active div translatable::before, #navbar-desk a.active:hover translatable::before, #navbar-desk a.active.active div translatable::before, #navbar-desk .navbar-img.active:hover translatable::before, #navbar-desk .navbar-img.active.active div translatable::before {
-    -webkit-animation: glitchTop 1s linear infinite;
-            animation: glitchTop 1s linear infinite;
+    animation: glitchTop 1s linear infinite;
     clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   }
   #navbar-desk a:hover translatable::after, #navbar-desk a.active div translatable::after, #navbar-desk .navbar-img:hover translatable::after, #navbar-desk .navbar-img.active div translatable::after, #navbar-desk a.active:hover translatable::after, #navbar-desk a.active.active div translatable::after, #navbar-desk .navbar-img.active:hover translatable::after, #navbar-desk .navbar-img.active.active div translatable::after {
-    -webkit-animation: glitchBotom 1.5s linear infinite;
-            animation: glitchBotom 1.5s linear infinite;
+    animation: glitchBotom 1.5s linear infinite;
     clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
     -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   }
@@ -218,17 +213,6 @@ body {
   }
   */
 }
-@-webkit-keyframes glitch {
-  2%, 64% {
-    transform: translate(2px, 0) skew(0deg);
-  }
-  4%, 60% {
-    transform: translate(-2px, 0) skew(0deg);
-  }
-  62% {
-    transform: translate(0, 0) skew(5deg);
-  }
-}
 @keyframes glitch {
   2%, 64% {
     transform: translate(2px, 0) skew(0deg);
@@ -240,17 +224,6 @@ body {
     transform: translate(0, 0) skew(5deg);
   }
 }
-@-webkit-keyframes glitchTop {
-  2%, 64% {
-    transform: translate(2px, -2px);
-  }
-  4%, 60% {
-    transform: translate(-2px, 2px);
-  }
-  62% {
-    transform: translate(13px, -1px) skew(-13deg);
-  }
-}
 @keyframes glitchTop {
   2%, 64% {
     transform: translate(2px, -2px);
@@ -260,17 +233,6 @@ body {
   }
   62% {
     transform: translate(13px, -1px) skew(-13deg);
-  }
-}
-@-webkit-keyframes glitchBotom {
-  2%, 64% {
-    transform: translate(-2px, 0);
-  }
-  4%, 60% {
-    transform: translate(-2px, 0);
-  }
-  62% {
-    transform: translate(-22px, 5px) skew(21deg);
   }
 }
 @keyframes glitchBotom {
@@ -295,77 +257,45 @@ body {
 }
 
 .transition {
-  -webkit-animation-name: changePageTransition;
-          animation-name: changePageTransition;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  animation-name: changePageTransition;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   display: initial !important;
 }
 
 .transitionEnd {
-  -webkit-animation-name: changePageTransition;
-          animation-name: changePageTransition;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
+  animation-name: changePageTransition;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
   animation-direction: reverse;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   display: initial !important;
 }
 
 .slideTransition {
-  -webkit-animation-name: slideTransition;
-          animation-name: slideTransition;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  animation-name: slideTransition;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   display: initial !important;
   right: 0;
 }
 
 .slideTransitionBack {
-  -webkit-animation-name: slideTransition;
-          animation-name: slideTransition;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  animation-name: slideTransition;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   display: initial !important;
   left: 0;
-}
-
-@-webkit-keyframes changePageTransition {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes changePageTransition {
@@ -374,20 +304,6 @@ body {
   }
   to {
     opacity: 1;
-  }
-}
-@-webkit-keyframes slideTransition {
-  0% {
-    width: 0%;
-    opacity: 0.5;
-  }
-  50% {
-    width: 100%;
-    opacity: 1;
-  }
-  100% {
-    width: 0%;
-    opacity: 0.5;
   }
 }
 @keyframes slideTransition {
@@ -418,26 +334,10 @@ translatable {
 }
 
 translatable.beingTranslated {
-  -webkit-animation-name: translatedComponent;
-          animation-name: translatedComponent;
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-}
-
-@-webkit-keyframes translatedComponent {
-  0% {
-    opacity: 1;
-  }
-  30%, 70% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation-name: translatedComponent;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
 }
 
 @keyframes translatedComponent {

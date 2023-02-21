@@ -40,14 +40,10 @@ body {
     height: 40vh;
     position: absolute;
     z-index: 0;
-    -webkit-animation-name: borderRotation;
-            animation-name: borderRotation;
-    -webkit-animation-duration: 4.5s;
-            animation-duration: 4.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-name: borderRotation;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   about-me .about-me-text {
     width: -webkit-fill-available;
@@ -70,18 +66,12 @@ body {
     color: var(--colors-light-6);
     transform: translateY(40%);
     opacity: 0;
-    -webkit-animation-name: textAppear;
-            animation-name: textAppear;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    -webkit-animation-delay: 0.25s;
-            animation-delay: 0.25s;
+    animation-name: textAppear;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.25s;
   }
   about-me .about-me-text translatable.first {
     margin-top: 0vh;
@@ -95,46 +85,10 @@ body {
     position: relative;
     bottom: -6vh;
     color: var(--colors-light);
-    -webkit-animation-name: intermitente;
-            animation-name: intermitente;
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-  }
-  @-webkit-keyframes borderRotation {
-    0% {
-      transform: rotate(0deg);
-      width: 40vh;
-      height: 40vh;
-      border-radius: 0vh;
-    }
-    10%, 20% {
-      transform: rotate(45deg);
-      width: 28vh;
-      height: 28vh;
-      border-radius: 1vh;
-    }
-    30%, 40% {
-      transform: rotate(180deg);
-      width: 40vh;
-      height: 40vh;
-      border-radius: 0vh;
-    }
-    50%, 60% {
-      transform: rotate(225deg);
-      width: 28vh;
-      height: 28vh;
-      border-radius: 1vh;
-    }
-    70%, 100% {
-      transform: rotate(360deg);
-      width: 40vh;
-      height: 40vh;
-      border-radius: 0vh;
-    }
+    animation-name: intermitente;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   @keyframes borderRotation {
     0% {
@@ -200,14 +154,10 @@ body {
     height: 26vh;
     position: absolute;
     z-index: 0;
-    -webkit-animation-name: borderRotation;
-            animation-name: borderRotation;
-    -webkit-animation-duration: 4.5s;
-            animation-duration: 4.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-name: borderRotation;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   about-me .about-me-text {
     display: flex;
@@ -236,18 +186,12 @@ body {
     margin: 1vh 0vh;
     transform: translateY(40%);
     opacity: 0;
-    -webkit-animation-name: textAppear;
-            animation-name: textAppear;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    -webkit-animation-delay: 0.25s;
-            animation-delay: 0.25s;
+    animation-name: textAppear;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.25s;
   }
   about-me .about-me-text translatable.first {
     margin-top: 0vh;
@@ -262,46 +206,10 @@ body {
     bottom: -5vh;
     font-size: 1.8vh;
     color: var(--colors-light);
-    -webkit-animation-name: intermitente;
-            animation-name: intermitente;
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-  }
-  @-webkit-keyframes borderRotation {
-    0% {
-      transform: rotate(0deg);
-      width: 26vh;
-      height: 26vh;
-      border-radius: 0vh;
-    }
-    10%, 20% {
-      transform: rotate(45deg);
-      width: 18vh;
-      height: 18vh;
-      border-radius: 1vh;
-    }
-    30%, 40% {
-      transform: rotate(180deg);
-      width: 26vh;
-      height: 26vh;
-      border-radius: 0vh;
-    }
-    50%, 60% {
-      transform: rotate(225deg);
-      width: 18vh;
-      height: 18vh;
-      border-radius: 1vh;
-    }
-    70%, 100% {
-      transform: rotate(360deg);
-      width: 26vh;
-      height: 26vh;
-      border-radius: 0vh;
-    }
+    animation-name: intermitente;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   @keyframes borderRotation {
     0% {
@@ -336,17 +244,6 @@ body {
     }
   }
 }
-@-webkit-keyframes intermitente {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 @keyframes intermitente {
   0% {
     opacity: 0;
@@ -356,16 +253,6 @@ body {
   }
   100% {
     opacity: 0;
-  }
-}
-@-webkit-keyframes textAppear {
-  from {
-    transform: translateY(40%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
   }
 }
 @keyframes textAppear {

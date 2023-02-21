@@ -8,8 +8,8 @@
     <title>Ariel Silva</title>
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/experience.css">
+    <link rel="stylesheet" href="styles/achievements.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="icon" href="assets/media/icon.ico">
 </head>
 
@@ -51,10 +51,10 @@
             <translatable class="title" variable="experience.title"></translatable>
             <div class="experience-container">
                 <div class="experience-options">
-                    <div class="experience-option active" experienceId="1">
+                    <div onclick="changeExperience(1)" class="experience-option active" experienceId="1">
                         <span>DuocUC</span>
                     </div>
-                    <div class="experience-option" experienceId="2">
+                    <div onclick="changeExperience(2)" class="experience-option" experienceId="2">
                         <span>CETECOM</span>
                     </div>
                 </div>
@@ -75,113 +75,54 @@
                         <translatable class="content-description"></translatable>
                         <div class="content-activities"></div>
                     </div>
-                    <div class="experience-text-footer"></div>
-                    <!--
-                        <i class="bi bi-link"></i>
-                    -->
+                    <div class="experience-text-footer">
+                        <translatable class="footer-skills-title"></translatable>
+                        <div class="footer-skills">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!--
-        <div class="experience-title">
-            <translatable class="title" variable="experience.title">
-            </translatable>
-            <translatable class="content" variable="experience.text">
-            </translatable>
-            <span class="toAchievements">Scroll/Touch Right to see my Achievements ▹</span>
-        </div>
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="slider-item swiper-slide">
-                    <div class="swiper-item-content">
-                        <div class="slider-item-image">
-                            <img class="slider-image" src="assets/media/DuocUC.png" alt="SliderImg">
-                            <div class="slider-image-content-header">
-                                <translatable variable="experience.experiences.0.date"
-                                    class="slider-item-content-date">
-                                </translatable>
-                                <translatable variable="experience.experiences.0.company"
-                                    class="slider-item-content-title">
-                                </translatable>
-                                <translatable variable="experience.experiences.0.jobtitle"
-                                    class="slider-item-content-subtitle">
-                                </translatable>
-                            </div>
-                        </div>
-                        <div class="slider-item-content">
-                            <translatable variable="experience.experiences.0.description"
-                                class="slider-item-content-text">
-                            </translatable>
-                            <div class="slider-item-content-footer">
-                                <translatable variable="experience.experiences.0.skills"
-                                    class="slider-item-content-footer-title">
-                                </translatable>
-                                <div class="slider-item-content-footer-skills">
-                                    <translatable variable="experience.experiences.0.skills_list.0"
-                                        class="slider-item-content-footer-skill">
-                                    </translatable>
-                                    <translatable variable="experience.experiences.0.skills_list.1"
-                                        class="slider-item-content-footer-skill">
-                                    </translatable>
-                                    <translatable variable="experience.experiences.0.skills_list.2"
-                                        class="slider-item-content-footer-skill">
-                                    </translatable>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider-item swiper-slide">
-                    <div class="swiper-item-content">
-                        <div class="slider-item-image">
-                            <img class="slider-image" src="assets/media/CETECOM.png" alt="SliderImg">
-                            <div class="slider-image-content-header">
-                                <translatable variable="experience.experiences.1.date"
-                                    class="slider-item-content-date">
-                                </translatable>
-                                <translatable variable="experience.experiences.1.company"
-                                    class="slider-item-content-title">
-                                </translatable>
-                                <translatable variable="experience.experiences.1.jobtitle"
-                                    class="slider-item-content-subtitle">
-                                </translatable>
-                            </div>
-                        </div>
-                        <div class="slider-item-content">
-                            <translatable variable="experience.experiences.1.description"
-                                class="slider-item-content-text">
-                            </translatable>
-                            <div class="slider-item-content-footer">
-                                <translatable variable="experience.experiences.1.skills"
-                                    class="slider-item-content-footer-title">
-                                </translatable>
-                                <div class="slider-item-content-footer-skills">
-                                    <translatable variable="experience.experiences.1.skills_list.0"
-                                        class="slider-item-content-footer-skill">
-                                    </translatable>
-                                    <translatable variable="experience.experiences.1.skills_list.1"
-                                        class="slider-item-content-footer-skill">
-                                    </translatable>
-                                    <translatable variable="experience.experiences.1.skills_list.2"
-                                        class="slider-item-content-footer-skill">
-                                    </translatable>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        -->
+        <span class="swipe-to-see experience">Swipe right to see my Achievements <i class="bi bi-caret-right-fill"></i></span>
     </experience>
 
     <achievements id="achievementsComponent">
+        <section class="achievement-body">
+            <translatable class="title" variable="achievements.title"></translatable>
+            <div class="achievement-container">
+                <div class="achievement-options">
+                    <div onclick="changeAchievement(1)" class="achievement-option active" achievementId="1">
+                        <span>ExpoCITT</span>
+                    </div>
+                </div>
+                <div class="achievement-text">
+                    <div class="achievement-text-header">
+                        <div class="header-pretitle">
+                            <translatable class="header-podium" [onload]="false" variable=""></translatable>
+                        </div>
+                        <div class="header-title">
+                            <translatable class="header-name" [onload]="false" variable=""></translatable>
+                            <a class="header-company" href="" target="_blank">
+                                <translatable [onload]="false" variable=""></translatable>
+                                <i class="bi bi-link"></i>
+                            </a>
+                        </div>
+                        <div class="header-subtitle">
+                            <translatable class="header-date" [onload]="false" variable=""></translatable>
+                        </div>
+                    </div>
+                    <div class="achievement-text-content">
+                        <translatable class="content-description"></translatable>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <span class="swipe-to-see achievements"><i class="bi bi-caret-left-fill"></i> Swipe left to see my Experience</span>
     </achievements>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    
     <script src="./scripts/translation.js"></script>
     <script src="./scripts/global.js"></script>
     <script src="./scripts/experiencie.js"></script>
